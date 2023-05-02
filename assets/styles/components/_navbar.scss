@@ -1,0 +1,141 @@
+nav {
+  position: relative;
+  display: flex;
+  width: 100;
+  height: 150px;
+  margin: 0 30px;
+
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid $color-border;
+  z-index: 1;
+
+  & .logo {
+    padding: 0 10px;
+  }
+
+  & img {
+    width: 180px;
+  }
+
+  & .menu-hamburger {
+    display: none;
+    margin: 0;
+    width: 90px;
+  }
+
+  & .menu-hamburger:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+
+  & .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    & ul {
+      width: 100%;
+      display: flex;
+      list-style: none;
+      text-transform: uppercase;
+      font-family: $font-title, sans-serif;
+      font-size: 1.5rem;
+      color: $color-nav;
+
+      & li {
+        margin: 0 30px;
+        transition: 0.2s;
+      }
+
+      & li:nth-child(6) a {
+        margin: 10px;
+      }
+      & li:last-child {
+        font-size: 1.2rem;
+      }
+
+      & li a i {
+        transition: 0.2s;
+      }
+    }
+
+    & li:hover:not(.social, .language) {
+      cursor: pointer;
+      text-decoration: 2px underline;
+      text-underline-offset: 8px;
+      transform: scale(1.2);
+      transition: 0.5s;
+    }
+
+    & li a#fr:hover,
+    li a#en:hover {
+      text-decoration: 2px underline;
+      text-underline-offset: 8px;
+    }
+
+    & li a:link {
+      color: $color-nav;
+      text-decoration: none;
+    }
+
+    & li a:visited {
+      color: $color-nav;
+      text-decoration: none;
+    }
+
+    & li a i:hover {
+      transform: scale(1.5);
+      transition: 0.5s;
+    }
+  } 
+}
+
+
+
+//* MEDIA SCREEN //
+
+@media screen and (max-width: 1175px) {
+  nav {
+    padding: 0;
+    border: none;
+
+    & img.menu-hamburger {
+      display: block;
+      margin: 0 30px;
+      z-index: 1;
+      transition: 0.2s ease;
+    }
+
+    div.nav-link {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.569);
+      margin-left: -110%;
+      transition: all 0.5s ease;
+
+      & ul {
+        display: flex;
+        flex-direction: column;
+
+        & li {
+          margin: 15px 0;
+          font-size: 1.8rem;
+        }
+      }
+    }
+    div.mobile-menu {
+      margin: 0px;
+      transition: all 0.7s ease;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+footer {
+  margin: 20px;
+  & .footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    & p {
+      color: white;
+      font-family: $font-title;
+      font-weight: lighter;
+      letter-spacing: 2px;
+      line-height: 30px;
+
+      & a:hover {
+        color: white;
+      }
+    }
+
+    & p a:link {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      color: $color-btn;
+    }
+  }
+}
+
+//* Media screen //
+// 768px //
+
+@media screen and (max-width: 768px) {
+  footer {
+    & .footer-container {
+      & p {
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        line-height: 20px;
+      }
+    }
+  }
+}

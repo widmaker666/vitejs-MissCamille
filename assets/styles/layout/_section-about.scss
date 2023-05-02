@@ -1,0 +1,225 @@
+.about-1 {
+  overflow-x: hidden;
+  & .title-about {
+    margin: 0 auto;
+    width: 40%;
+    height: 100px;
+    background: white;
+    border: 2px solid $color-border;
+
+    /*  text-align: center;
+    font-family: $font-title;
+    font-size: 2rem;
+    font-weight: 100;
+    color: $color-btn;
+    text-transform: uppercase;
+    letter-spacing: 8px; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & h1 {
+      font-family: $font-logo;
+      font-size: 3rem;
+      color: $color-btn;
+      text-transform: capitalize;
+      letter-spacing: 5px;
+    }
+  }
+
+  & .grid-container-up {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "img1 text1"
+      "img1 img2";
+    align-items: end;
+  }
+
+  & .img-left {
+    grid-area: img1;
+    border: 1px solid $color-border;
+    margin: 50px 30px;
+    display: flex;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & .right-text {
+    grid-area: text1;
+    border: 1px solid $color-border;
+    margin: 50px 30px;
+    text-align: center;
+
+    & p {
+      font-family: $font-title, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 100;
+      letter-spacing: 2px;
+      line-height: 40px;
+      color: white;
+      padding: 20px;
+    }
+  }
+  & .img-right {
+    grid-area: img2;
+    border: 1px solid $color-border;
+    margin: 50px 30px;
+    display: flex;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.about-2 {
+  & .grid-container-down {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40% 60%;
+    grid-template-areas:
+      "text2 img4"
+      "img3 img4";
+    align-items: end;
+  }
+
+  & .left-text {
+    grid-area: text2;
+    border: 1px solid $color-border;
+    margin: 50px 30px;
+    text-align: center;
+
+    & p {
+      font-family: $font-title, sans-serif;
+      font-size: 1.5rem;
+      font-weight: 100;
+      letter-spacing: 2px;
+      line-height: 40px;
+      color: white;
+      padding: 20px;
+    }
+  }
+
+  & .img-left {
+    display: flex;
+    grid-area: img3;
+    border: 1px solid $color-border;
+    margin: 50px 30px;
+    height: auto;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & .img-right {
+    display: flex;
+    grid-area: img4;
+    border: 1px solid $color-border;
+    margin: 50px 30px;
+    height: 90%;
+    width: auto;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+//* MEDIA SCREEN //
+
+//- changer le mode de grid pour affichage responsive //
+
+@media screen and (max-width: 1270px) {
+  //! Ne pas oublier d'appeler la section, div, header etc ... sinon ça marche pas //
+  section.about-1 {
+    & .grid-container-up {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 1153px) {
+  section.about-2 {
+    & .grid-container-down {
+      display: block;
+    }
+  }
+}
+@media screen and (max-width: 1050px) {
+  section.about-1 {
+    & .title-about {
+      width: 40%;
+      height: 100px;
+      font-size: 1.3rem;
+    }
+  }
+}
+@media screen and (max-width: 835px) {
+  section.about-1 {
+    & .title-about {
+      width: 300px;
+      height: 100px;
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        letter-spacing: 1px;
+      }
+    }
+
+    & .right-text {
+      & p {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+  }
+
+  section.about-2 {
+    & .left-text {
+      & p {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  section.about-1 {
+    & .title-about {
+      width: 250px;
+      height: 100px;
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        letter-spacing: 1px;
+      }
+    }
+
+    & .right-text {
+      & p {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+  }
+
+  section.about-2 {
+    & .left-text {
+      & p {
+        font-size: 1rem;
+        line-height: 20px;
+      }
+    }
+  }
+}

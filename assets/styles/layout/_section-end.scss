@@ -1,0 +1,231 @@
+.end {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transform: translateY(-150px);
+  height: 120vh;
+
+  & .end-container {
+    & .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 900px;
+      height: 120px;
+      background: white;
+      border: 3px solid $color-border;
+      margin: 50px auto;
+
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        font-weight: lighter;
+        letter-spacing: 3px;
+      }
+    }
+
+    & button {
+      width: 300px;
+      height: 100px;
+      font-size: 3rem;
+    }
+
+    & .arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
+      width: 70px;
+      height: 70px;
+      border: 3px solid $color-border;
+      border-radius: 50px;
+      margin: 50px auto;
+
+      & a:link {
+        color: $color-btn;
+      }
+      & a:visited {
+        color: $color-btn;
+      }
+
+      & i {
+        font-size: 2.5em;
+      }
+    }
+
+    & .arrow:hover {
+      cursor: pointer;
+      animation: arrowAnimation 0.8s linear infinite;
+    }
+
+    @keyframes arrowAnimation {
+      50% {
+        transform: translateY(30px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    & button a:visited {
+      color: $color-btn;
+      text-decoration: none;
+    }
+    & button a:link {
+      color: $color-btn;
+      text-decoration: none;
+    }
+
+    & button:hover {
+      cursor: pointer;
+      width: 300px;
+      height: 100px;
+      font-size: 3.2rem;
+      background: black;
+      text-decoration: 1px underline;
+      text-underline-offset: 8px;
+      text-decoration-color: $color-border;
+    }
+  }
+  & .social-container {
+    & .social {
+      & h4 {
+        color: $color-btn;
+        font-size: 3rem;
+        font-family: $font-title;
+        font-weight: lighter;
+        text-transform: uppercase;
+      }
+    }
+    & ul {
+      list-style: none;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      & li i {
+        width: 100px;
+        height: 50px;
+        font-size: 3em;
+      }
+      & li a:visited {
+        color: $color-btn;
+      }
+      & li a:link {
+        color: $color-btn;
+      }
+      & li i:hover {
+        animation: socialAnimation 0.8s linear infinite;
+      }
+      @keyframes socialAnimation {
+        50% {
+          transform: scale(1.5);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+//* Media screen //
+
+// Petit ecran et pc 769px — 1280px //
+@media screen and (max-width: 1280px) {
+  section.end {
+    height: 140vh;
+    margin: 50px auto;
+
+    & .end-container {
+      & .title {
+        width: 700px;
+        & h1 {
+          font-size: 2rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+// tablette 481px — 768px //
+@media screen and (max-width: 768px) {
+  section.end {
+    height: 70vh;
+    margin: 50px auto;
+    & .end-container {
+      transform: translateY(-100px);
+      & .title {
+        width: 400px;
+        & h1 {
+          font-size: 1.6rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+// Telephone 320px —480px //
+@media screen and (max-width: 480px) {
+  section.end {
+    height: 100vh;
+    margin: 0px auto;
+    padding: 0;
+  
+    transform: none;   
+    & .logo-end {
+     transform: translateY(-100px);
+      & img {
+        width: 200px;
+      }
+    }
+
+    & .end-container {
+      
+      margin: 0;
+      & .title {
+        width: 250px;
+        height: 100px;
+        & h1 {
+          font-size: 1.2rem;
+          letter-spacing: 1px;
+        }
+      }
+
+      & button {
+        width: 200px;
+        height: 60px;
+        font-size: 2rem;
+      }
+      & button:hover {
+        background: white;
+        cursor: none;
+        text-decoration: none;
+        width: 200px;
+        height: 60px;
+        font-size: 2rem;
+      }
+
+      & .social-container {
+        & .social {
+          & h4 {
+            font-size: 2rem;
+          }
+        }
+        & ul {
+          & li i {
+            width: 80px;
+            height: 50px;
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+}

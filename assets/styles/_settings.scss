@@ -1,0 +1,49 @@
+//* FONTS //
+@font-face {
+  font-family: "mistrully";
+  src: url("../assets/fonts/Mistrully.ttf");
+}
+@font-face {
+  font-family: "alumni-reg";
+  src: url("../assets/fonts/AlumniSans-Regular.ttf");
+}
+@font-face {
+  font-family: "alumni-bold";
+  src: url("../assets/fonts/AlumniSans-Bold.ttf");
+}
+
+//* VARIABLES //
+
+//- FONTS //
+$font-logo: mistrully, sans-serif;
+$font-title: alumni-reg, sans-serif;
+$font-paragraph: alumni-reg, sans-serif;
+
+//- COLORS //
+$color-nav: #edc455;
+$color-border: #edc455;
+$color-btn: #b59132;
+$color-background: #000000;
+$color-card: rgba(0, 0, 0, 0.75);
+
+//* ROOT //
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: $color-background;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+

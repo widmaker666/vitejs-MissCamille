@@ -1,0 +1,205 @@
+.collections {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  & .title-collections {
+    background: white;
+    width: 40%;
+    height: 100px;
+    border: 2px solid $color-border;
+    margin: 40px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*  font-family: $font-title;
+    font-size: 2rem;
+    font-weight: 100;
+    color: $color-btn;
+    text-transform: uppercase;
+    letter-spacing: 3px; */
+
+    & h1 {
+      font-family: $font-logo;
+      font-size: 3rem;
+      color: $color-btn;
+      text-transform: capitalize;
+      letter-spacing: 5px;
+    }
+  }
+  & .grid-collection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 30px 100px;
+
+    & div {
+      position: relative;
+
+      border: 1px solid $color-border;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      & img {
+        width: 100%;
+      }
+    }
+
+    & button {
+      position: absolute;
+      width: 150px;
+      height: 50px;
+      font-size: 1.5rem;
+    }
+
+    & button:hover {
+      cursor: pointer;
+      width: 180px;
+      height: 80px;
+      font-size: 2rem;
+      background: black;
+      text-decoration: 1px underline;
+      text-decoration-color: $color-border;
+      text-underline-offset: 6px;
+      transform: scale(1.2);
+      transition: 0.5s ease;
+      animation: background-filter 0.5s forwards;
+    }
+    & button a:visited {
+      text-decoration: none;
+      color: $color-btn;
+    }
+    & button a:link {
+      text-decoration: none;
+      color: $color-btn;
+    }
+  }
+  & .grid-collection::before {
+    content: "";
+    position: absolute;
+    bottom: 60px;
+    left: -1px;
+    width: 50%;
+    height: 1px;
+    margin: 0 auto;
+    transform: translateX(50%) scale(0);
+    background: $color-border;
+    animation: before 3s ease-in-out forwards;
+  }
+}
+
+//* Media Screen //
+@media screen and (max-width: 1024px) {
+  section.collections {
+    & .title-collections {
+      width: 300px;
+      height: 100px;
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+
+
+// 900px - 700px little screen, laptop //
+@media screen and (max-width: 900px) {
+  section.collections {
+    & .title-collections {
+      width: 300px;
+      height: 100px;
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// 625px - 481px tablets //
+@media screen and (max-width: 625px) {
+  section.collections {
+    position: relative;
+    & .title-collections {
+      width: 300px;
+      height: 100px;
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        letter-spacing: 1px;
+      }
+    }
+    & .title-collections::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      width: 50%;
+      height: 1px;
+      left: 0;
+      transform: translateX(50%) scale(0);
+      background: $color-border;
+      animation: before 3s ease-in-out forwards;
+    }
+
+    & .grid-collection {
+      & button {
+        width: 100px;
+        height: 30px;
+        font-size: 0.8rem;
+      }
+      & button:hover {
+        background: white;
+        width: 100px;
+        height: 30px;
+        font-size: 0.8rem;
+        text-underline-offset: 3px;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+// 480px - 320px smartphone //
+@media screen and (max-width: 480px) {
+  section.collections {
+    & .title-collections {
+      width: 250px;
+      height: 100px;
+      & h1 {
+        font-family: $font-logo;
+        font-size: 2rem;
+        color: $color-btn;
+        letter-spacing: 1px;
+      }
+    }
+    & .grid-collection {
+      & button {
+        width: 60px;
+        height: 20px;
+        font-size: 0.7rem;
+      }
+      & button:hover {
+        background: white;
+        width: 60px;
+        height: 30px;
+        font-size: 0.8rem;
+        text-underline-offset: 3px;
+        transform: scale(1);
+      }
+    }
+  }
+}
