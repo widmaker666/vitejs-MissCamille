@@ -39,20 +39,19 @@ button {
 nav {
   position: relative;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100;
   height: 150px;
   margin: 0 30px;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
+  padding-right: 50px;
   border: 1px solid #edc455;
-  z-index: 1;
 }
 nav .logo {
-  padding: 0 10px;
+  padding: 0 50px;
 }
 nav img {
-  width: 180px;
+  width: 200px;
 }
 nav .menu-hamburger {
   display: none;
@@ -78,30 +77,31 @@ nav .nav-link ul {
   color: #edc455;
 }
 nav .nav-link ul li {
-  margin: 0 30px;
-  transition: 0.2s;
+  position: relative;
+  margin: 0 50px;
+  transition: 0.2s linear;
 }
 nav .nav-link ul li:nth-child(6) a {
   margin: 10px;
 }
 nav .nav-link ul li:last-child {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 nav .nav-link ul li a i {
   transition: 0.2s;
 }
-nav .nav-link li:hover:not(.social, .language) {
+nav .nav-link li:not(.social, .language):hover {
   cursor: pointer;
-  -webkit-text-decoration: 2px underline;
-          text-decoration: 2px underline;
+  -webkit-text-decoration: 1px underline;
+          text-decoration: 1px underline;
   text-underline-offset: 8px;
   transform: scale(1.2);
   transition: 0.5s;
 }
 nav .nav-link li a#fr:hover,
 nav .nav-link li a#en:hover {
-  -webkit-text-decoration: 2px underline;
-          text-decoration: 2px underline;
+  -webkit-text-decoration: 1px underline;
+          text-decoration: 1px underline;
   text-underline-offset: 8px;
 }
 nav .nav-link li a:link {
@@ -117,14 +117,136 @@ nav .nav-link li a i:hover {
   transition: 0.5s;
 }
 
-@media screen and (max-width: 1175px) {
+@media screen and (max-width: 1440px) {
+  nav .nav-link ul {
+    font-size: 1.5rem;
+  }
+  nav .nav-link ul li {
+    margin: 0 35px;
+  }
+  nav .nav-link ul li:last-child {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+  nav .nav-link ul {
+    font-size: 1.3rem;
+  }
+  nav .nav-link ul li {
+    margin: 0 25px;
+  }
+  nav .nav-link ul li:last-child {
+    font-size: 1.1rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   nav {
     padding: 0;
     border: none;
   }
+  nav .logo {
+    padding: 0 50px;
+  }
+  nav img {
+    width: 150px;
+  }
   nav img.menu-hamburger {
     display: block;
+    width: 100px;
     margin: 0 30px;
+    z-index: 1;
+    transition: 0.2s ease;
+  }
+  nav div.nav-link {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.569);
+    margin-left: -110%;
+    transition: all 0.5s ease;
+  }
+  nav div.nav-link ul {
+    display: flex;
+    flex-direction: column;
+  }
+  nav div.nav-link ul li {
+    margin: 15px 0;
+    font-size: 1.8rem;
+  }
+  nav div.mobile-menu {
+    margin: 0px;
+    transition: all 0.7s ease;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  nav {
+    padding: 0;
+    border: none;
+  }
+  nav .logo {
+    padding: 0 50px;
+  }
+  nav img {
+    width: 150px;
+  }
+  nav img.menu-hamburger {
+    display: block;
+    width: 100px;
+    margin: 0 30px;
+    z-index: 1;
+    transition: 0.2s ease;
+  }
+  nav div.nav-link {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.569);
+    margin-left: -110%;
+    transition: all 0.5s ease;
+  }
+  nav div.nav-link ul {
+    display: flex;
+    flex-direction: column;
+  }
+  nav div.nav-link ul li {
+    margin: 15px 0;
+    font-size: 1.8rem;
+  }
+  nav div.mobile-menu {
+    margin: 0px;
+    transition: all 0.7s ease;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  nav {
+    padding: 0;
+    border: none;
+  }
+  nav .logo {
+    padding: 0 10px;
+  }
+  nav img {
+    width: 120px;
+  }
+  nav img.menu-hamburger {
+    display: block;
+    width: 80px;
     z-index: 1;
     transition: 0.2s ease;
   }

@@ -16,6 +16,9 @@ const hRef7 = document.querySelector("#href7");
 menuHamburger.addEventListener("click", () => {
   navLinks.classList.toggle("mobile-menu");
 });
+navLinks.addEventListener("click", () => {
+  navLinks.classList.remove("mobile-menu");
+})
 
 //! Href module-menu //
 hRef1.addEventListener("click", () => {
