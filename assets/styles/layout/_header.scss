@@ -1,5 +1,5 @@
 header {
-  min-height: 100vh;
+  height: 100vh;
   background: url("../../../assets/images/header.jpg") center/contain no-repeat;
   background-size: 100% auto;
   margin: 20px 30px;
@@ -37,6 +37,15 @@ header {
       font-size: 2em;
       font-weight: 100;
       text-shadow: -9px 13px 5px rgb(0, 0, 0);
+    }
+    & h3 {
+      font-family: $font-logo;
+      font-size: 1.4em;
+      letter-spacing: 3px;
+      font-weight: 100;
+      text-shadow: -9px 13px 5px rgb(0, 0, 0);
+      margin-left: 10px;
+      color: $color-border;
     }
   }
 
@@ -78,197 +87,51 @@ header::after {
 }
 
 //* MEDIA SCREEN //
-@media screen and (max-width: 1480px) {
+// Grand Ecran pc - TV (1440px et plus) //
+@media screen and (max-width: 1440px) {
+}
+
+// 1439px - 1201px Ecran Pc //
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
   header {
-    min-height: 80vh;
+    & .title-container {
+      & h1 {
+        font-size: 8em;
+      }
+    }
+
+    & button {
+      margin: 80px 150px;
+      width: 250px;
+      height: 70px;
+      font-size: 2rem;
+    }
+  }
+}
+// Petit ecran et pc 769px — 1024px //
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  header {
+    height: 78vh;
+    background-size: 100% auto;
 
     & .title-container {
+      width: 100%;
       height: 30vh;
-      padding: 40px;
+      padding: 50px 50px;
 
       & h1 {
-        font-size: 7.5rem;
-      }
-      & h5 {
-        font-size: 2em;
-      }
-    }
-    & button {
-      bottom: 10%;
-      margin: 100px;
-    }
-  }
-}
-@media screen and (max-width: 1200px) {
-  header {
-    min-height: 70vh;
-
-    & .title-container {
-      height: 30vh;
-      padding: 40px;
-
-      & h1 {
-        font-size: 4.8rem;
-      }
-      & h5 {
-        font-size: 2em;
-      }
-    }
-    & button {
-      bottom: 10%;
-      margin: 100px;
-      width: 180px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-  }
-}
-@media screen and (max-width: 1044px) {
-  header {
-    min-height: 60vh;
-
-    & .title-container {
-      height: 30vh;
-      padding: 40px;
-
-      & h1 {
-        font-size: 4.8rem;
-      }
-      & h5 {
-        font-size: 1.7em;
-      }
-    }
-    & button {
-      bottom: 10%;
-      margin: 100px;
-      width: 180px;
-      height: 60px;
-      font-size: 1.5rem;
-    }
-  }
-}
-@media screen and (max-width: 900px) {
-  header {
-    min-height: 50vh;
-
-    & .title-container {
-      height: 30vh;
-      padding: 40px;
-
-      & h1 {
-        font-size: 3.7rem;
-      }
-      & h5 {
-        font-size: 1.6em;
-      }
-    }
-    & button {
-      bottom: 10%;
-      margin: 70px;
-      width: 150px;
-      height: 60px;
-      font-size: 1.2rem;
-    }
-  }
-}
-@media screen and (max-width: 760px) {
-  header {
-    min-height: 40vh;
-
-    & .title-container {
-      height: 30vh;
-      padding: 40px;
-
-      & h1 {
-        font-size: 2.3rem;
-      }
-      & h5 {
-        font-size: 1em;
-      }
-    }
-    & button {
-      bottom: 2%;
-      margin: 70px;
-      width: 150px;
-      height: 50px;
-      font-size: 1rem;
-    }
-  }
-}
-@media screen and (max-width: 620px) {
-  header {
-    min-height: 30vh;
-    & .title-container {
-      height: 35vh;
-      padding: 40px;
-
-      & h1 {
-        font-size: 1.8rem;
-      }
-      & h5 {
-        letter-spacing: 3px;
-        font-size: 1em;
-      }
-    }
-    & button {
-      bottom: 5%;
-      margin: 50px;
-      width: 120px;
-      height: 40px;
-      font-size: 0.9rem;
-    }
-  }
-}
-@media screen and (max-width: 516px) {
-  header {
-    min-height: 10vh;
-
-    & .title-container {
-      height: 25vh;
-      padding: 20px;
-
-      & h1 {
-        font-size: 1.3rem;
-        letter-spacing: 6px;
-      }
-      & h5 {
+        font-size: 5em;
         letter-spacing: 2px;
-        font-size: 0.9em;
       }
     }
+
     & button {
-      bottom: 10%;
-      margin: 30px;
-      width: 100px;
-      height: 30px;
-      font-size: 0.9rem;
+      margin: 50px 100px;
+      width: 200px;
+      height: 70px;
+      font-size: 2rem;
     }
   }
 }
-
-@media screen and (max-width: 453px) {
-  header {
-    min-height: 10vh;
-
-    & .title-container {
-      height: 23vh;
-      padding: 15px;
-
-      & h1 {
-        font-size: 1.5rem;
-        letter-spacing: 3px;
-      }
-      & h5 {
-        letter-spacing: 1.5px;
-        font-size: 0.8em;
-      }
-    }
-    & button {
-      bottom: 0;
-      margin: 40px;
-      width: 70px;
-      height: 25px;
-      font-size: 0.7rem;
-    }
-  }
-}
+// tablette 481px — 768px //
+// Telephone 320px —480px //

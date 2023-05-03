@@ -379,7 +379,7 @@ footer .footer-container p a:link {
   }
 }
 header {
-  min-height: 100vh;
+  height: 100vh;
   background: url("../../../assets/images/header.jpg") center/contain no-repeat;
   background-size: 100% auto;
   margin: 20px 30px;
@@ -417,6 +417,15 @@ header .title-container h5 {
   font-weight: 100;
   text-shadow: -9px 13px 5px rgb(0, 0, 0);
 }
+header .title-container h3 {
+  font-family: mistrully, sans-serif;
+  font-size: 1.4em;
+  letter-spacing: 3px;
+  font-weight: 100;
+  text-shadow: -9px 13px 5px rgb(0, 0, 0);
+  margin-left: 10px;
+  color: #edc455;
+}
 header button {
   position: absolute;
   bottom: 10%;
@@ -451,182 +460,36 @@ header::after {
   animation: before 3s ease-in-out forwards;
 }
 
-@media screen and (max-width: 1480px) {
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+  header .title-container h1 {
+    font-size: 8em;
+  }
+  header button {
+    margin: 80px 150px;
+    width: 250px;
+    height: 70px;
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   header {
-    min-height: 80vh;
+    height: 78vh;
+    background-size: 100% auto;
   }
   header .title-container {
+    width: 100%;
     height: 30vh;
-    padding: 40px;
+    padding: 50px 50px;
   }
   header .title-container h1 {
-    font-size: 7.5rem;
-  }
-  header .title-container h5 {
-    font-size: 2em;
-  }
-  header button {
-    bottom: 10%;
-    margin: 100px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  header {
-    min-height: 70vh;
-  }
-  header .title-container {
-    height: 30vh;
-    padding: 40px;
-  }
-  header .title-container h1 {
-    font-size: 4.8rem;
-  }
-  header .title-container h5 {
-    font-size: 2em;
-  }
-  header button {
-    bottom: 10%;
-    margin: 100px;
-    width: 180px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 1044px) {
-  header {
-    min-height: 60vh;
-  }
-  header .title-container {
-    height: 30vh;
-    padding: 40px;
-  }
-  header .title-container h1 {
-    font-size: 4.8rem;
-  }
-  header .title-container h5 {
-    font-size: 1.7em;
-  }
-  header button {
-    bottom: 10%;
-    margin: 100px;
-    width: 180px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-@media screen and (max-width: 900px) {
-  header {
-    min-height: 50vh;
-  }
-  header .title-container {
-    height: 30vh;
-    padding: 40px;
-  }
-  header .title-container h1 {
-    font-size: 3.7rem;
-  }
-  header .title-container h5 {
-    font-size: 1.6em;
-  }
-  header button {
-    bottom: 10%;
-    margin: 70px;
-    width: 150px;
-    height: 60px;
-    font-size: 1.2rem;
-  }
-}
-@media screen and (max-width: 760px) {
-  header {
-    min-height: 40vh;
-  }
-  header .title-container {
-    height: 30vh;
-    padding: 40px;
-  }
-  header .title-container h1 {
-    font-size: 2.3rem;
-  }
-  header .title-container h5 {
-    font-size: 1em;
-  }
-  header button {
-    bottom: 2%;
-    margin: 70px;
-    width: 150px;
-    height: 50px;
-    font-size: 1rem;
-  }
-}
-@media screen and (max-width: 620px) {
-  header {
-    min-height: 30vh;
-  }
-  header .title-container {
-    height: 35vh;
-    padding: 40px;
-  }
-  header .title-container h1 {
-    font-size: 1.8rem;
-  }
-  header .title-container h5 {
-    letter-spacing: 3px;
-    font-size: 1em;
-  }
-  header button {
-    bottom: 5%;
-    margin: 50px;
-    width: 120px;
-    height: 40px;
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 516px) {
-  header {
-    min-height: 10vh;
-  }
-  header .title-container {
-    height: 25vh;
-    padding: 20px;
-  }
-  header .title-container h1 {
-    font-size: 1.3rem;
-    letter-spacing: 6px;
-  }
-  header .title-container h5 {
+    font-size: 5em;
     letter-spacing: 2px;
-    font-size: 0.9em;
   }
   header button {
-    bottom: 10%;
-    margin: 30px;
-    width: 100px;
-    height: 30px;
-    font-size: 0.9rem;
-  }
-}
-@media screen and (max-width: 453px) {
-  header {
-    min-height: 10vh;
-  }
-  header .title-container {
-    height: 23vh;
-    padding: 15px;
-  }
-  header .title-container h1 {
-    font-size: 1.5rem;
-    letter-spacing: 3px;
-  }
-  header .title-container h5 {
-    letter-spacing: 1.5px;
-    font-size: 0.8em;
-  }
-  header button {
-    bottom: 0;
-    margin: 40px;
-    width: 70px;
-    height: 25px;
-    font-size: 0.7rem;
+    margin: 50px 100px;
+    width: 200px;
+    height: 70px;
+    font-size: 2rem;
   }
 }
 .container-intro {
