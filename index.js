@@ -77,7 +77,7 @@ window.addEventListener("scroll", () => {
   const topDocument = photo2.getBoundingClientRect().top;
 
   // Ternaire //
-  scrollTop > (scrollTop + topDocument).toFixed() - clientHeight * 0.7
+  scrollTop > (scrollTop + topDocument).toFixed() - clientHeight * 0.8
     ? ((photo2.style.opacity = 1), (photo2.style.transition = "0.5s ease-in"))
     : (photo2.style.opacity = 0);
 });
@@ -88,7 +88,7 @@ window.addEventListener("scroll", () => {
   const topDocument = photo3.getBoundingClientRect().top;
 
   // Ternaire //
-  scrollTop > (scrollTop + topDocument).toFixed() - clientHeight * 0.7
+  scrollTop > (scrollTop + topDocument).toFixed() - clientHeight * 0.8
     ? ((photo3.style.opacity = 1), (photo3.style.transition = "0.5s ease-in"))
     : (photo3.style.opacity = 0);
 });
@@ -99,7 +99,7 @@ window.addEventListener("scroll", () => {
   const topDocument = photo4.getBoundingClientRect().top;
 
   // Ternaire //
-  scrollTop > (scrollTop + topDocument).toFixed() - clientHeight * 0.7
+  scrollTop > (scrollTop + topDocument).toFixed() - clientHeight * 0.5
     ? ((photo4.style.opacity = 1), (photo4.style.transition = "0.5s ease-in"))
     : (photo4.style.opacity = 0);
 });
@@ -388,7 +388,7 @@ jewel1.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img1 = document.createElement("img");
-  img1.src = "./assets/images/bijou8.png";
+  img1.src = "./assets/imagesWebp/bijou1.webp";
   img1.id = "bijou1";
 
   // add image //
@@ -416,7 +416,7 @@ jewel2.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img2 = document.createElement("img");
-  img2.src = "./assets/images/bijou2.png";
+  img2.src = "./assets/imagesWebp/newbijoux4.webp";
   img2.id = "bijou2";
 
   // add image //
@@ -444,7 +444,7 @@ jewel3.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img3 = document.createElement("img");
-  img3.src = "./assets/images/bijou3.png";
+  img3.src = "./assets/imagesWebp/bijou4.webp";
   img3.id = "bijou3";
 
   // add image //
@@ -472,7 +472,7 @@ jewel4.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img4 = document.createElement("img");
-  img4.src = "./assets/images/bijou6.png";
+  img4.src = "./assets/imagesWebp/newbijou6.webp";
   img4.id = "bijou4";
 
   // add image //
@@ -500,7 +500,7 @@ jewel5.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img5 = document.createElement("img");
-  img5.src = "./assets/images/bijou1.png";
+  img5.src = "./assets/imagesWebp/bijou5.webp";
   img5.id = "bijou5";
 
   // add image //
@@ -528,7 +528,7 @@ jewel6.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img6 = document.createElement("img");
-  img6.src = "./assets/images/bijou4.png";
+  img6.src = "./assets/imagesWebp/bijou2.webp";
   img6.id = "bijou6";
 
   // add image //
@@ -556,7 +556,7 @@ jewel7.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img7 = document.createElement("img");
-  img7.src = "./assets/images/bijou5.png";
+  img7.src = "./assets/imagesWebp/bijou7.webp";
   img7.id = "bijou7";
 
   // add image //
@@ -584,7 +584,7 @@ jewel8.addEventListener("click", () => {
   // div image
   let divImg = document.querySelector(".image-container");
   const img8 = document.createElement("img");
-  img8.src = "./assets/images/bijou7.png";
+  img8.src = "./assets/imagesWebp/bijou9.webp";
   img8.id = "bijou8";
 
   // add image //
@@ -600,6 +600,34 @@ popupContainer8.addEventListener("click", () => {
   // remove image //
   popupContainer.classList.remove("active");
   divImg.removeChild(img8);
+});
+
+//- Jewel 9 //
+//! Constants Photo jewels //
+const jewel9 = document.querySelector("#jewel9-img");
+const popupContainer9 = document.querySelector(".popup-container");
+
+//! Click event //
+jewel9.addEventListener("click", () => {
+  // div image
+  let divImg = document.querySelector(".image-container");
+  const img9 = document.createElement("img");
+  img9.src = "./assets/imagesWebp/bijou6.webp";
+  img9.id = "bijou9";
+
+  // add image //
+  popupContainer.classList.toggle("active");
+  divImg.appendChild(img9);
+});
+
+popupContainer9.addEventListener("click", () => {
+  // div image
+  let img9 = document.getElementById("bijou9");
+  let divImg = document.querySelector(".image-container");
+
+  // remove image //
+  popupContainer.classList.remove("active");
+  divImg.removeChild(img9);
 });
 
 //* responsive BIJOUX au click pour les grossir //
@@ -658,6 +686,14 @@ const jewel8Responsive = document.getElementById("jewel-8-responsive");
 
 jewel8Responsive.addEventListener("click", () => {
   jewel8Responsive.classList.toggle("imgactive");
+});
+
+//- Jewel 9 //
+//! Constants Photo jewels //
+const jewel9Responsive = document.getElementById("jewel-9-responsive");
+
+jewel9Responsive.addEventListener("click", () => {
+  jewel9Responsive.classList.toggle("imgactive");
 });
 //! --------------------------------------------------------------- //
 //* Background Filter btn hover //

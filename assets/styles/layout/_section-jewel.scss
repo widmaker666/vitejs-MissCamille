@@ -1,21 +1,23 @@
+.jewels::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 50%;
+  height: 1px;
+  transform: translateX(50%) scale(0);
+  background: $color-border;
+  animation: before 3s ease-in-out forwards;
+}
+
 .jewels {
   position: relative;
 
   & .title-jewel {
     margin: 0 auto;
-    width: 40%;
-    height: 100px;
+    width: 500px;
+    height: 120px;
     background: white;
     border: 2px solid $color-border;
-   
-
-    /* text-align: center;
-    font-family: $font-title;
-    font-size: 2rem;
-    font-weight: 100;
-    color: $color-btn;
-    text-transform: uppercase;
-    letter-spacing: 8px; */
 
     display: flex;
     justify-content: center;
@@ -23,11 +25,15 @@
 
     & h1 {
       font-family: $font-logo;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: $color-btn;
       text-transform: capitalize;
-      letter-spacing: 5px;
+      letter-spacing: 8px;
     }
+  }
+
+  & .grid-container-jewels-responsive {
+    display: none;
   }
 
   & .grid-container-jewels {
@@ -35,53 +41,56 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     margin: 40px;
-    gap: 10px;
+    row-gap: 50px;
     align-items: center;
 
-    & .jewel1,
-    .jewel3,
-    .jewel4,
-    .jewel6,
-    .jewel7 {
+    & img:hover {
+      cursor: pointer;
+    }
+
+    //! -------------Jewel1 --------------//
+    & .jewel1 {
       position: relative;
       border: 1px solid $color-border;
       background: rgba(0, 0, 0, 0.75);
       text-align: center;
-      font-size: 1rem;
       width: 90%;
       height: 500px;
       margin: 0 auto;
 
+      & #jewel1-img {
+        width: 140px;
+        margin: 10px;
+      }
+
+      & .text1::before {
+        position: absolute;
+        content: "";
+        width: 250px;
+        height: 2px;
+        background: $color-border;
+        top: 10px;
+        transform: translateX(-50%);
+      }
+
       & p {
         font-family: $font-paragraph;
         color: white;
-        font-weight: 0;
-        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
         padding: 0px 10px;
         height: 150px;
         width: 100%;
         display: flex;
         align-items: center;
-      }
-
-      & .text1::before,
-      .text3::before,
-      .text4::before,
-      .text3::before,
-      .text6::before,
-      .text7::before {
-        position: absolute;
-        content: "";
-        width: 200px;
-        height: 2px;
-        background: $color-border;
-        top: 18px;
-        transform: translateX(-50%);
+        margin: 10px 0 0 0;
       }
 
       & button {
         width: 150px;
-        height: 35px;
+        height: 45px;
         margin: 5px 0;
         font-size: 1.3rem;
         text-align: center;
@@ -99,7 +108,7 @@
       }
 
       & h3 {
-        margin: 40px 0;
+        margin: 20px 0;
         text-transform: uppercase;
         font-size: 1rem;
       }
@@ -131,22 +140,286 @@
       }
     }
 
-    & img {
-      width: 200px;
-      height: auto;
+    //! -------------Jewel2 --------------//
+    & .jewel2 {
+      position: relative;
+      border: 1px solid $color-border;
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+      top: 99px;
+
+      & #jewel2-img {
+        width: 210px;
+        margin: 10px;
+      }
+
+      & .text2::before {
+        position: absolute;
+        content: "";
+        width: 250px;
+        height: 2px;
+        background: $color-border;
+        top: 230px;
+        transform: translateX(-50%);
+      }
+
+      & p {
+        font-family: $font-paragraph;
+        color: white;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
+        padding: 0px 10px;
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 10px 0 0 0;
+      }
+
+      & button {
+        width: 150px;
+        height: 45px;
+        margin: 5px 0;
+        font-size: 1.3rem;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      & button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 2px;
+        background: black;
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      & h3 {
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+
+      & h3:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 8px;
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+
+      & a:link {
+        text-decoration: none;
+        font-family: $font-paragraph;
+        letter-spacing: 2px;
+        color: $color-btn;
+      }
+
+      & a:visited {
+        color: $color-btn;
+        font-weight: 100;
+      }
     }
 
+    //! -------------Jewel3 --------------//
+    & .jewel3 {
+      position: relative;
+      border: 1px solid $color-border;
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+
+      & #jewel3-img {
+        width: 170px;
+        margin: 10px;
+      }
+
+      & .text3::before {
+        position: absolute;
+        content: "";
+        width: 250px;
+        height: 2px;
+        background: $color-border;
+        top: 230px;
+        transform: translateX(-50%);
+      }
+
+      & p {
+        font-family: $font-paragraph;
+        color: white;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
+        padding: 0px 10px;
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 10px 0 0 0;
+      }
+
+      & button {
+        width: 150px;
+        height: 45px;
+        margin: 5px 0;
+        font-size: 1.3rem;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      & button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 2px;
+        background: black;
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      & h3 {
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+
+      & h3:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 8px;
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+
+      & a:link {
+        text-decoration: none;
+        font-family: $font-paragraph;
+        letter-spacing: 2px;
+        color: $color-btn;
+      }
+
+      & a:visited {
+        color: $color-btn;
+        font-weight: 100;
+      }
+    }
+
+    //! -------------Jewel4 --------------//
+    & .jewel4 {
+      position: relative;
+      border: 1px solid $color-border;
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+
+      & #jewel4-img {
+        width: 190px;
+        margin: 10px;
+      }
+
+      & .text4::before {
+        position: absolute;
+        content: "";
+        width: 250px;
+        height: 2px;
+        background: $color-border;
+        top: 240px;
+        transform: translateX(-50%);
+      }
+
+      & p {
+        font-family: $font-paragraph;
+        color: white;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
+        padding: 0px 10px;
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 10px 0 0 0;
+      }
+
+      & button {
+        width: 150px;
+        height: 45px;
+        margin: 5px 0;
+        font-size: 1.3rem;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      & button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 2px;
+        background: black;
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      & h3 {
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+
+      & h3:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 8px;
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+
+      & a:link {
+        text-decoration: none;
+        font-family: $font-paragraph;
+        letter-spacing: 2px;
+        color: $color-btn;
+      }
+
+      & a:visited {
+        color: $color-btn;
+        font-weight: 100;
+      }
+    }
+
+    //! -------------Jewel5 --------------//
     & .jewel5 {
       position: relative;
       display: flex;
       border: 1px solid $color-border;
       background: rgba(0, 0, 0, 0.75);
       text-align: center;
-      width: 450px;
-      height: 300px;
+      width: 550px;
+      height: 350px;
       margin: 0 auto;
       padding: 10px;
       top: 25px;
+
+      & #jewel5-img {
+        width: 150px;
+        height: auto;
+        margin: 10px;
+      }
 
       .text5::before {
         position: absolute;
@@ -155,7 +428,7 @@
         height: 2px;
         background: $color-border;
         top: 50%;
-        left: 70px;
+        left: 50px;
         transform: translateX(-50%);
         transform: rotate(90deg);
       }
@@ -163,17 +436,18 @@
       & p {
         font-family: $font-paragraph;
         color: white;
-        font-weight: 0;
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        height: 150px;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+        font-style: italic;
+        height: 200px;
         display: flex;
         align-items: center;
       }
 
       & button {
         width: 150px;
-        height: 35px;
+        height: 45px;
         margin: 5px 0;
         font-size: 1.3rem;
         text-align: center;
@@ -220,17 +494,199 @@
         padding: 20px;
       }
     }
+
+    //! -------------Jewel6 --------------//
+    & .jewel6 {
+      position: relative;
+      border: 1px solid $color-border;
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+
+      & #jewel6-img {
+        width: 250px;
+        margin: 10px;
+      }
+
+      & .text6::before {
+        position: absolute;
+        content: "";
+        width: 250px;
+        height: 2px;
+        background: $color-border;
+        top: 230px;
+        transform: translateX(-50%);
+      }
+
+      & p {
+        font-family: $font-paragraph;
+        color: white;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
+        padding: 0px 10px;
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 10px 0 0 0;
+      }
+
+      & button {
+        width: 150px;
+        height: 45px;
+        margin: 5px 0;
+        font-size: 1.3rem;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      & button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 2px;
+        background: black;
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      & h3 {
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+
+      & h3:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 8px;
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+
+      & a:link {
+        text-decoration: none;
+        font-family: $font-paragraph;
+        letter-spacing: 2px;
+        color: $color-btn;
+      }
+
+      & a:visited {
+        color: $color-btn;
+        font-weight: 100;
+      }
+    }
+
+    //! -------------Jewel7 --------------//
+    & .jewel7 {
+      position: relative;
+      border: 1px solid $color-border;
+      background: rgba(0, 0, 0, 0.75);
+      text-align: center;
+      width: 90%;
+      height: 500px;
+      margin: 0 auto;
+
+      & #jewel7-img {
+        width: 200px;
+        transform: translateX(20px);
+        margin: 10px;
+      }
+
+      & .text7::before {
+        position: absolute;
+        content: "";
+        width: 250px;
+        height: 2px;
+        background: $color-border;
+        top: 230px;
+        transform: translateX(-50%);
+      }
+
+      & p {
+        font-family: $font-paragraph;
+        color: white;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
+        padding: 0px 10px;
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 10px 0 0 0;
+      }
+
+      & button {
+        width: 150px;
+        height: 45px;
+        margin: 5px 0;
+        font-size: 1.3rem;
+        text-align: center;
+        transition: 0.5s;
+      }
+
+      & button:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 2px;
+        background: black;
+        transition: 0.5s;
+        transform: scale(1.1);
+      }
+
+      & h3 {
+        margin: 20px 0;
+        text-transform: uppercase;
+        font-size: 1rem;
+      }
+
+      & h3:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-decoration-color: $color-border;
+        text-underline-offset: 8px;
+        transform: scale(1.1);
+        transition: 0.5s;
+      }
+
+      & a:link {
+        text-decoration: none;
+        font-family: $font-paragraph;
+        letter-spacing: 2px;
+        color: $color-btn;
+      }
+
+      & a:visited {
+        color: $color-btn;
+        font-weight: 100;
+      }
+    }
+    //! -------------Jewel8 --------------//
     & .jewel8 {
       position: relative;
       display: flex;
       border: 1px solid $color-border;
       background: rgba(0, 0, 0, 0.75);
       text-align: center;
-      width: 450px;
-      height: 300px;
+      width: 550px;
+      height: 350px;
       margin: 0 auto;
       padding: 10px;
-      bottom: 68px;
+      top: -50px;
+
+      & #jewel8-img {
+        width: 150px;
+        height: auto;
+        margin: 10px;
+      }
 
       .text8::before {
         position: absolute;
@@ -239,7 +695,7 @@
         height: 2px;
         background: $color-border;
         top: 50%;
-        left: 60px;
+        left: 50px;
         transform: translateX(-50%);
         transform: rotate(90deg);
       }
@@ -247,17 +703,18 @@
       & p {
         font-family: $font-paragraph;
         color: white;
-        font-weight: 0;
-        font-size: 0.9rem;
-        letter-spacing: 2px;
-        height: 150px;
+        font-weight: 500;
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+        font-style: italic;
+        height: 200px;
         display: flex;
         align-items: center;
       }
 
       & button {
         width: 150px;
-        height: 35px;
+        height: 45px;
         margin: 5px 0;
         font-size: 1.3rem;
         text-align: center;
@@ -300,44 +757,55 @@
         color: $color-btn;
         font-weight: 100;
       }
+      & img {
+        padding: 20px;
+      }
     }
-    & .jewel2 {
+
+    //! -------------Jewel9 --------------//
+    & .logo-jewel {
       position: relative;
       border: 1px solid $color-border;
       background: rgba(0, 0, 0, 0.75);
       text-align: center;
-      font-size: 1rem;
-      width: 80%;
+      width: 90%;
       height: 500px;
       margin: 0 auto;
-      top: 99px;
 
-      .text2::before {
+      & #jewel9-img {
+        width: 140px;
+        transform: translateX(-10px);
+        margin: 10px;
+      }
+
+      & .text9::before {
         position: absolute;
         content: "";
         width: 250px;
         height: 2px;
         background: $color-border;
-        top: 200px;
+        top: 230px;
         transform: translateX(-50%);
       }
 
       & p {
         font-family: $font-paragraph;
         color: white;
-        font-weight: 0;
-        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 1.15rem;
+        font-style: italic;
+        letter-spacing: 2.7px;
         padding: 0px 10px;
         height: 150px;
         width: 100%;
         display: flex;
         align-items: center;
+        margin: 10px 0 0 0;
       }
 
       & button {
         width: 150px;
-        height: 35px;
-        margin: 5px 0;
+        height: 45px;
         font-size: 1.3rem;
         text-align: center;
         transition: 0.5s;
@@ -354,7 +822,7 @@
       }
 
       & h3 {
-        margin: 40px 0;
+        margin: 20px 0;
         text-transform: uppercase;
         font-size: 1rem;
       }
@@ -381,45 +849,7 @@
       }
     }
   }
-  .logo-jewel {
-    width: 90%;
-    height: 500px;
-    border: 1px solid $color-border;
-    margin: 0 auto;
-    & img {
-      display: flex;
-      width: 80%;
-      margin: 0 auto;
-    }
-    & button {
-      font-size: 1.5rem;
-      width: 180px;
-      height: 60px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
 
-    & button {
-      & a:link {
-        text-decoration: none;
-        color: $color-btn;
-      }
-      & a:visited {
-        color: $color-btn;
-      }
-    }
-    & button:hover {
-      cursor: pointer;
-      text-decoration: underline;
-      text-decoration-color: $color-border;
-      text-underline-offset: 2px;
-      transition: 0.5s;
-      transform: scale(1.1);
-      background: black;
-    }
-  }
   & .grid-container-jewels::before {
     content: "";
     position: absolute;
@@ -434,43 +864,6 @@
   }
 }
 
-.jewel4,
-.jewel6 {
-  & img {
-    margin-top: 30px;
-  }
-}
-
-.jewel7 {
-  & img {
-    margin-top: 20px;
-    margin-left: 40px;
-  }
-}
-
-.jewel5 {
-  & img {
-    margin-bottom: 20px;
-    margin-right: 20px;
-  }
-}
-.jewel8 {
-  & img {
-    margin-bottom: 50px;
-  }
-}
-
-.jewels::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  width: 50%;
-  height: 1px;
-  transform: translateX(50%) scale(0);
-  background: $color-border;
-  animation: before 3s ease-in-out forwards;
-}
-
 //! Les animation css //
 @keyframes before {
   100% {
@@ -481,1340 +874,869 @@
 //* Media Screen //
 
 // Grand - TV (1440) //
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
   section.jewels {
     & .grid-container-jewels-responsive {
       display: none;
     }
     & .grid-container-jewels {
-      row-gap: 20px;
-      column-gap: 0px;
-      & .jewel1,
-      .jewel3,
-      .jewel4,
-      .jewel6,
-      .jewel7 {
-        font-size: 1.2rem;
-        width: 70%;
-        & img {
-          transition: 0.5s ease-out;
+      & img:hover {
+        cursor: pointer;
+      }
+      //! -------------Jewel1 --------------//
+      & .jewel1 {
+        & .text1::before {
+          top: 0;
         }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
-          margin-top: 10px;
-        }
-
-        & button {
-          width: 200px;
-          height: 50px;
-          margin: 0;
-          padding: 0;
-        }
-
-        & .text1::before,
-        .text3::before,
-        .text4::before,
-        .text3::before,
-        .text6::before,
-        .text7::before {
-          top: 25px;
+          font-size: 1rem;
         }
       }
+
+      //! -------------Jewel2 --------------//
       & .jewel2 {
-        width: 80%;
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
-          font-size: 1.2rem;
-          margin-top: 0;
-        }
-        & button {
-          width: 200px;
-          height: 50px;
-          margin: 0;
-          padding: 0;
+          font-size: 1rem;
         }
       }
+
+      //! -------------Jewel3 --------------//
+      & .jewel3 {
+        & p {
+          font-size: 1rem;
+        }
+      }
+
+      //! -------------Jewel4 --------------//
+      & .jewel4 {
+        & .text4::before {
+          top: 230px;
+        }
+        & p {
+          font-size: 1rem;
+        }
+      }
+
+      //! -------------Jewel5 --------------//
       & .jewel5 {
-        width: 100%;
-        & img:hover {
-          cursor: pointer;
+        & p {
+          font-size: 0.9rem;
         }
 
-        & p {
-          font-size: 1rem;
-          margin-left: 0;
-        }
         & button {
-          width: 200px;
-          height: 50px;
           margin: 0;
-          padding: 0;
         }
       }
+
+      //! -------------Jewel6 --------------//
+      & .jewel6 {
+        & p {
+          font-size: 1rem;
+        }
+      }
+
+      //! -------------Jewel7 --------------//
+      & .jewel7 {
+        & p {
+          font-size: 1rem;
+        }
+      }
+
+      //! -------------Jewel8 --------------//
       & .jewel8 {
-        width: 100%;
-        & img:hover {
-          cursor: pointer;
+        & p {
+          font-size: 0.9rem;
         }
 
-        & p {
-          font-size: 1rem;
-          margin-top: 0;
-        }
         & button {
-          width: 200px;
-          height: 50px;
           margin: 0;
-          padding: 0;
         }
       }
+
+      //! -------------Jewel9 --------------//
       & .logo-jewel {
-        width: 70%;
+        & p {
+          font-size: 1rem;
+          margin: 0;
+        }
       }
     }
   }
 }
 
 // 1439px - 1201px //
-@media screen and (max-width: 1439px) {
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
   section.jewels {
     & .grid-container-jewels-responsive {
       display: none;
     }
     & .grid-container-jewels {
       row-gap: 20px;
-      column-gap: 0px;
-      & .jewel1,
-      .jewel3,
-      .jewel4,
-      .jewel6,
-      .jewel7 {
-        font-size: 1.2rem;
-        width: 70%;
 
-        & img {
-          transition: 0.5s ease-out;
-        }
+      & img:hover {
+        cursor: pointer;
+      }
 
-        & img:hover {
-          cursor: pointer;
-        }
-
-        & p {
-          margin-top: 10px;
-          font-size: 1rem;
-          letter-spacing: 1px;
-        }
-
-        & button {
+      //! -------------Jewel1 --------------//
+      & .jewel1 {
+        & .text1::before {
           width: 180px;
-          height: 50px;
-          margin: 0;
-          padding: 0;
+          top: 0;
         }
-
-        & h3 {
-          font-size: 0.8rem;
-        }
-
-        & .text1::before,
-        .text3::before,
-        .text4::before,
-        .text3::before,
-        .text6::before,
-        .text7::before {
-          top: 25px;
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
         }
       }
+
+      //! -------------Jewel2 --------------//
       & .jewel2 {
-        width: 80%;
-
-        & img {
-          transition: 0.5s ease-out;
+        & .text2::before {
+          width: 300px;
         }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
-          margin-top: 10px;
-          font-size: 1rem;
-          letter-spacing: 1px;
+          font-size: 1.1rem;
+          letter-spacing: 2px;
         }
+      }
 
-        & button {
+      //! -------------Jewel3 --------------//
+      & .jewel3 {
+        & .text3::before {
           width: 180px;
-          height: 50px;
-          margin: 0;
-          padding: 0;
         }
-
-        & h3 {
-          font-size: 0.8rem;
-        }
-
         & p {
-          font-size: 1.2rem;
-          margin-top: 0;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
         }
       }
+
+      //! -------------Jewel4 --------------//
+      & .jewel4 {
+        & .text4::before {
+          width: 180px;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+      }
+
+      //! -------------Jewel5 --------------//
       & .jewel5 {
-        width: 100%;
-
-        & img {
-          transition: 0.5s ease-out;
-        }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
-          margin-top: 10px;
-          font-size: 1rem;
-          letter-spacing: 1px;
+          font-size: 0.9rem;
         }
 
         & button {
-          width: 135px;
-          height: 50px;
           margin: 0;
-          padding: 0;
-        }
-
-        & h3 {
-          font-size: 0.7rem;
         }
       }
+
+      //! -------------Jewel6 --------------//
+      & .jewel6 {
+        & .text6::before {
+          width: 180px;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+      }
+
+      //! -------------Jewel7 --------------//
+      & .jewel7 {
+        & .text7::before {
+          width: 180px;
+        }
+        & p {
+          margin: 0;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+      }
+
+      //! -------------Jewel8 --------------//
       & .jewel8 {
-        width: 100%;
-
-        & img {
-          transition: 0.5s ease-out;
-        }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
-          margin-top: 10px;
-          font-size: 1rem;
-          letter-spacing: 1px;
+          font-size: 0.9rem;
         }
 
         & button {
-          width: 150px;
-          height: 50px;
           margin: 0;
-          padding: 0;
-        }
-
-        & h3 {
-          font-size: 0.7rem;
         }
       }
+
+      //! -------------Jewel9 --------------//
       & .logo-jewel {
-        width: 70%;
+        & .text9::before {
+          width: 180px;
+        }
+        & p {
+          margin: 0;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
       }
     }
   }
 }
 
 // Ecran Pc basique 1025px — 1200px //
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
   section.jewels {
+    & .title-jewel {
+      width: 400px;
+    }
+
     & .grid-container-jewels-responsive {
       display: none;
     }
     & .grid-container-jewels {
-      gap: 10px;
-      & .jewel1,
-      .jewel3,
-      .jewel4,
-      .jewel6,
-      .jewel7 {
-        font-size: 0.8rem;
+      display: grid;
+      grid-template-columns: 33% 33% 34%;
+      grid-template-rows: repeat(3, 1fr);
+      margin: 20px 40px;
+      row-gap: 50px;
+      column-gap: 10px;
+      align-items: center;
+      justify-content: center;
+
+      & img:hover {
+        cursor: pointer;
+      }
+
+      //! -------------Jewel1 --------------//
+      & .jewel1 {
         width: 100%;
 
-        & img {
-          transition: 0.5s ease-out;
-        }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
-        & p {
-          margin-top: 10px;
-        }
-
-        & button {
-          width: 150px;
-          height: 50px;
-          margin: 0;
-          padding: 0;
-        }
-
-        & h3 {
-          font-size: 0.8rem;
-        }
-
-        & .text1::before,
-        .text3::before,
-        .text4::before,
-        .text3::before,
-        .text6::before,
-        .text7::before {
-          top: 28px;
-          width: 160px;
-        }
-      }
-      & .jewel2 {
-        width: 70%;
-
-        & img {
-          transition: 0.5s ease-out;
-        }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
-        & .text2::before {
-          width: 200px;
+        & .text1::before {
+          width: 0px;
+          top: 0;
         }
         & p {
           font-size: 0.9rem;
-        }
-        & h3 {
-          font-size: 0.8rem;
+          letter-spacing: 2px;
         }
         & button {
-          width: 150px;
-          height: 50px;
           margin: 0;
-          padding: 0;
         }
       }
+
+      //! -------------Jewel2 --------------//
+      & .jewel2 {
+        width: 100%;
+        top: 0;
+        & .text2::before {
+          width: 150px;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel3 --------------//
+      & .jewel3 {
+        width: 100%;
+
+        & .text3::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel4 --------------//
+      & .jewel4 {
+        width: 100%;
+
+        & .text4::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel5 --------------//
       & .jewel5 {
         width: 100%;
+        height: 500px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
 
-        & p {
-          font-size: 1rem;
-          margin-left: 0;
-        }
-        & button {
-          width: 150px;
-          height: 50px;
-          margin: 0;
+        & #jewel5-img {
+          width: 100px;
+          height: auto;
+          margin: 0px;
           padding: 0;
+          margin-top: 50px;
+          transform: translateY(0px);
         }
-        & h3 {
-          font-size: 0.8rem;
-          width: 200px;
+
+        & .text5::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          width: 100%;
+          height: 150px;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+
+        & button {
+          margin: 0;
         }
       }
+
+      //! -------------Jewel6 --------------//
+      & .jewel6 {
+        width: 100%;
+
+        & .text6::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel7 --------------//
+      & .jewel7 {
+        width: 100%;
+
+        & .text7::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel8 --------------//
       & .jewel8 {
         width: 100%;
+        height: 500px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
 
-        & p {
-          font-size: 1rem;
-          margin-top: 0;
-        }
-        & button {
-          width: 150px;
-          height: 50px;
-          margin: 0;
+        & #jewel8-img {
+          width: 90px;
+          height: auto;
+          margin: 0px;
           padding: 0;
+          margin-top: 50px;
+          transform: translateY(0px);
         }
-        & h3 {
-          font-size: 0.8rem;
+
+        & .text8::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          width: 100%;
+          height: 150px;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+
+        & button {
+          margin: 0;
         }
       }
+
+      //! -------------Jewel9 --------------//
       & .logo-jewel {
         width: 100%;
-        height: 300px;
-        padding: 0;
-        margin: 0;
-        margin-bottom: 137px;
-      }
-      & button {
-        width: 150px;
-        height: 50px;
-        font-size: 1.3rem;
+
+        & .text9::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
       }
     }
   }
 }
 // Petit ecran et pc 769px — 1024px //
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   section.jewels {
     & .title-jewel {
-      width: 300px;
-      height: 100px;
-      & h1 {
-        font-family: $font-logo;
-        font-size: 2rem;
-        color: $color-btn;
-        letter-spacing: 1px;
-      }
+      width: 400px;
     }
 
     & .grid-container-jewels-responsive {
       display: none;
     }
-
     & .grid-container-jewels {
+      display: grid;
       grid-template-columns: 33% 33% 34%;
-      grid-template-rows: 33% 33% 34%;
+      grid-template-rows: repeat(3, 1fr);
+      margin: 20px 40px;
+      row-gap: 50px;
+      column-gap: 10px;
       align-items: center;
-      margin: 20px 0;
-      gap: 0;
-      row-gap: 10px;
-      width: 100%;
+      justify-content: center;
 
-      & .jewel1,
-      .jewel3,
-      .jewel4,
-      .jewel6,
-      .jewel7 {
-        position: relative;
-        border: 1px solid $color-border;
-        background: rgba(0, 0, 0, 0.75);
-        text-align: center;
-        font-size: 1rem;
-        width: 80%;
-        height: 500px;
+      & img:hover {
+        cursor: pointer;
+      }
 
-        & .text1::before,
-        .text3::before,
-        .text4::before,
-        .text3::before,
-        .text6::before,
-        .text7::before {
-          position: absolute;
-          content: "";
+      //! -------------Jewel1 --------------//
+      & .jewel1 {
+        width: 100%;
+
+        & .text1::before {
           width: 0px;
-          height: 2px;
-          background: $color-border;
-          top: 0px;
-          transform: translateX(-50%);
+          top: 0;
         }
-        & img {
-          width: 180px;
-          margin: 0;
-          margin: 20px auto;
-          transition: 0.5s ease-out;
-        }
-
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
           font-size: 0.9rem;
+          letter-spacing: 2px;
         }
-
         & button {
-          font-size: 1rem;
-          width: 110px;
-          height: 40px;
-        }
-
-        & h3 {
-          font-size: 0.7rem;
+          margin: 0;
         }
       }
 
+      //! -------------Jewel2 --------------//
       & .jewel2 {
-        position: relative;
-        border: 1px solid $color-border;
-        background: rgba(0, 0, 0, 0.75);
-        text-align: center;
-        font-size: 1rem;
-        width: 80%;
-        height: 500px;
-        margin: 0 auto;
-        top: 0px;
-
+        width: 100%;
+        top: 0;
         & .text2::before {
-          position: absolute;
-          content: "";
           width: 0px;
-          height: 2px;
-          background: $color-border;
-          top: 5px;
-          transform: translateX(-50%);
         }
-        & .text2 {
-          position: absolute;
-          bottom: 0;
-        }
-
-        & img {
-          width: 180px;
-          margin-top: 20px;
-          transition: 0.5s ease-out;
-        }
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
           font-size: 0.9rem;
+          letter-spacing: 2px;
         }
-
-        & h3 {
-          font-size: 0.7rem;
-        }
-
         & button {
-          font-size: 1rem;
-          width: 110px;
-          height: 40px;
+          margin: 0;
         }
       }
-      & .jewel5 {
-        position: relative;
-        display: block;
-        border: 1px solid $color-border;
-        background: rgba(0, 0, 0, 0.75);
-        text-align: center;
-        font-size: 1rem;
-        width: 80%;
-        height: 500px;
-        top: 0px;
 
-        & .text5 {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
+      //! -------------Jewel3 --------------//
+      & .jewel3 {
+        width: 100%;
 
-        & img {
-          width: 150px;
-          margin: 0;
-          padding: 0;
-          transition: 0.5s ease-out;
+        & .text3::before {
+          width: 0px;
+          top: 0;
         }
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
           font-size: 0.9rem;
-          padding: 0 10px;
-          margin: 0;
+          letter-spacing: 2px;
         }
-
-        & h3 {
-          margin: 0;
-          margin: 35px auto;
-          width: 180px;
-          font-size: 0.7rem;
-        }
-
         & button {
-          font-size: 1rem;
-          width: 110px;
-          height: 40px;
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel4 --------------//
+      & .jewel4 {
+        width: 100%;
+
+        & .text4::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel5 --------------//
+      & .jewel5 {
+        width: 100%;
+        height: 500px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+
+        & #jewel5-img {
+          width: 100px;
+          height: auto;
+          margin: 0px;
+          padding: 0;
+          margin-top: 50px;
+          transform: translateY(0px);
         }
 
         & .text5::before {
-          position: absolute;
-          content: "";
           width: 0px;
-          height: 2px;
-          background: $color-border;
-          top: -20px;
-
-          transform: rotate(0deg);
-          transform: translateX(0%);
+          top: 0;
         }
-      }
-      & .jewel8 {
-        position: relative;
-        display: block;
-        border: 1px solid $color-border;
-        background: rgba(0, 0, 0, 0.75);
-        text-align: center;
-        font-size: 1rem;
-        width: 80%;
-        height: 500px;
-        top: 0px;
-
-        & .text8 {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-        }
-
-        & img {
-          width: 250px;
-          margin: 0;
-          padding: 0;
-          transition: 0.5s ease-out;
-        }
-        & img:hover {
-          cursor: pointer;
-        }
-
         & p {
+          width: 100%;
+          height: 150px;
           font-size: 0.9rem;
-          padding: 0 10px;
-          margin: 0;
-        }
-
-        & h3 {
-          margin: 0;
-          margin: 35px auto;
-          width: 180px;
-          font-size: 0.7rem;
+          letter-spacing: 2px;
         }
 
         & button {
-          font-size: 1rem;
-          width: 110px;
-          height: 40px;
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel6 --------------//
+      & .jewel6 {
+        width: 100%;
+
+        & .text6::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel7 --------------//
+      & .jewel7 {
+        width: 100%;
+
+        & .text7::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel8 --------------//
+      & .jewel8 {
+        width: 100%;
+        height: 500px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+
+        & #jewel8-img {
+          width: 90px;
+          height: auto;
+          margin: 0px;
+          padding: 0;
+          margin-top: 50px;
+          transform: translateY(0px);
         }
 
         & .text8::before {
-          position: absolute;
-          content: "";
           width: 0px;
-          height: 2px;
-          background: $color-border;
-          top: -20px;
-          transform: rotate(0deg);
+          top: 0;
+        }
+        & p {
+          width: 100%;
+          height: 150px;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+
+        & button {
+          margin: 0;
         }
       }
-      .logo-jewel {
-        align-items: center;
-        width: 80%;
-        height: 300px;
-        margin: 0;
-        margin: 0 auto;
-      }
-      & button {
-        margin: 0 auto;
+
+      //! -------------Jewel9 --------------//
+      & .logo-jewel {
+        width: 100%;
+
+        & .text9::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
       }
     }
   }
 }
 // tablette 481px — 768px //
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   section.jewels {
     & .title-jewel {
-      width: 300px;
-      height: 100px;
-      & h1 {
-        font-family: $font-logo;
-        font-size: 2rem;
-        color: $color-btn;
-        letter-spacing: 1px;
-      }
+      width: 400px;
     }
 
     & .grid-container-jewels-responsive {
       display: none;
     }
-
     & .grid-container-jewels {
-      position: relative;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      grid-template-areas:
-        "jewel1 jewel2"
-        "jewel3 jewel4"
-        "jewel5 jewel6"
-        "jewel7 jewel8"
-        "logo-jewel logo-jewel";
-      margin-top: 20px;
-
-      & .jewel1 {
-        grid-area: jewel1;
-        & img {
-          margin: 0;
-          width: 200px;
-          transform: none;
-        }
-
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text1 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-      & .jewel2 {
-        grid-area: jewel2;
-
-        & img {
-          margin: 0;
-          width: 200px;
-          margin-top: 20px;
-          transition: none;
-        }
-
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-        & .text2 {
-          margin: 0;
-          padding: 0;
-        }
-
-        & p {
-          margin: 0;
-          padding: 0;
-          padding: 10px;
-        }
-      }
-      & .jewel3 {
-        grid-area: jewel3;
-        & img {
-          margin: 0;
-          width: 200px;
-          transform: none;
-        }
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text3 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-      & .jewel4 {
-        grid-area: jewel4;
-        & img {
-          margin: 0;
-          width: 200px;
-          margin-top: 50px;
-          transition: none;
-        }
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text4 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-      & .jewel5 {
-        grid-area: jewel5;
-        & img {
-          margin: 0;
-          transition: none;
-        }
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text5 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-
-      & .jewel6 {
-        grid-area: jewel6;
-        & img {
-          margin: 0;
-          width: 250px;
-          margin-top: 50px;
-          transition: none;
-        }
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text6 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-      & .jewel7 {
-        grid-area: jewel7;
-        & img {
-          margin: 0;
-          width: 270px;
-          margin-left: 25px;
-          transition: none;
-        }
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text7 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-      & .jewel8 {
-        grid-area: jewel8;
-        & img {
-          margin: 0;
-          width: 270px;
-          margin-left: 20px;
-          transition: none;
-        }
-        & img:hover {
-          cursor: auto;
-          transform: none;
-          transition: none;
-        }
-
-        & .text8 {
-          margin: 0;
-          padding: 0;
-
-          & p {
-            margin: 0;
-            padding: 0;
-            padding: 10px;
-          }
-        }
-      }
-      & .logo-jewel {
-        position: absolute;
-        grid-area: logo-jewel;
-        width: 90%;
-        top: 0;
-        right: 34px;
-        margin-top: 20px;
-        display: flex;
-
-        & img {
-          display: flex;
-          width: 250px;
-        }
-      }
-    }
-  }
-}
-
-// 624px - 481px //
-@media screen and (max-width: 624px) {
-  section.jewels {
-    & .title-jewel {
-      width: 300px;
-      height: 100px;
-      & h1 {
-        font-family: $font-logo;
-        font-size: 2rem;
-        color: $color-btn;
-        letter-spacing: 1px;
-      }
-    }
-
-    & .grid-container-jewels {
-      display: none;
-    }
-
-    & .grid-container-jewels-responsive {
-      position: relative;
-      overflow-x: hidden;
-      margin-top: 20px;
-      gap: 20px;
-      display: grid;
-      grid-template-rows: repeat(9, 1fr);
-      justify-content: center;
+      grid-template-columns: 50% 50%;
+      margin: 20px 40px;
+      row-gap: 50px;
+      column-gap: 10px;
       align-items: center;
+      justify-content: center;
 
-      & .jewel1-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 150px;
-          margin-left: 30px;
-          transform: translateY(-20px);
-        }
-
-        & .text1-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(-30px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel2-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 140px;
-          margin-left: 30px;
-          margin: 0;
-          transform: translateY(30px);
-        }
-
-        & .text2-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(50px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel3-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 170px;
-          margin-left: 30px;
-          margin: 0;
-        }
-
-        & .text3-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(-30px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel4-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 200px;
-          margin-left: 30px;
-          margin: 0;
-          transform: translateY(10px);
-        }
-
-        & .text4-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(70px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel5-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 100px;
-          margin-left: 30px;
-          margin: 0;
-        }
-
-        & .text5-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(30px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
+      & img:hover {
+        cursor: pointer;
       }
 
-      & .jewel6-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
+      //! -------------Jewel1 Responsive--------------//
+      & .jewel1 {
+        width: 100%;
 
-        & img {
-          width: 200px;
-          margin-left: 30px;
-          margin: 0;
-          transform: translateY(10px);
+        & .text1::before {
+          width: 0px;
+          top: 0;
         }
-
-        & .text6-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(70px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel7-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 200px;
-          margin-left: 30px;
-          margin: 0;
-          transform: translateY(-20px);
-          margin-left: 50px;
-        }
-
-        & .text7-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(0px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel8-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin: 0 auto;
-
-        & img {
-          width: 250px;
-          margin-left: 30px;
-          margin: 0;
-          margin-left: 50px;
-          transform: translateY(-30px);
-        }
-
-        & .text8-responsive {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          transform: translateY(-10px);
-
-          & button {
-            width: 150px;
-            height: 40px;
-            font-size: 1.2rem;
-          }
-
-          & h3 {
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .logo-jewel-responsive {
-        width: 90%;
-        height: 40vh;
-        margin: 0 auto;
-        background: black;
-        border: 1px solid $color-border;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        & img {
-          display: flex;
-          width: 250px;
-          margin: 0 auto;
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
         }
         & button {
-          width: 150px;
-          height: 40px;
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel2 Responsive--------------//
+      & .jewel2 {
+        width: 100%;
+        top: 0;
+        & .text2::before {
+          width: 0px;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel3 Responsive--------------//
+      & .jewel3 {
+        width: 100%;
+
+        & .text3::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel4 Responsive--------------//
+      & .jewel4 {
+        width: 100%;
+
+        & .text4::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel5 Responsive--------------//
+      & .jewel5 {
+        width: 100%;
+        height: 500px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+
+        & #jewel5-img {
+          width: 100px;
+          height: auto;
+          margin: 0px;
+          padding: 0;
+          margin-top: 50px;
+          transform: translateY(0px);
+        }
+
+        & .text5::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          width: 100%;
+          height: 150px;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel6 Responsive--------------//
+      & .jewel6 {
+        width: 100%;
+
+        & #jewel6-img {
+          width: 220px;
+        }
+
+        & .text6::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel7 Responsive--------------//
+      & .jewel7 {
+        width: 100%;
+
+        & .text7::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel8 Responsive--------------//
+      & .jewel8 {
+        width: 100%;
+        height: 500px;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+
+        & #jewel8-img {
+          width: 90px;
+          height: auto;
+          margin: 0px;
+          padding: 0;
+          margin-top: 50px;
+          transform: translateY(0px);
+        }
+
+        & .text8::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
+          width: 100%;
+          height: 150px;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+        }
+
+        & button {
+          margin: 0;
+        }
+      }
+
+      //! -------------Jewel9 Responsive--------------//
+      & .logo-jewel {
+        width: 200%;
+
+        & #jewel9-img {
+          width: 140px;
+        }
+        & .text9::before {
+          width: 0px;
+          top: 0;
+        }
+        & p {
           font-size: 1.2rem;
-          transform: translateY(-40px);
+          letter-spacing: 2px;
         }
-        & a:link {
-          text-decoration: none;
-          color: $color-btn;
-        }
-        & a:visited {
-          text-decoration: none;
-          color: $color-btn;
+        & button {
+          margin: 0;
         }
       }
     }
@@ -1844,499 +1766,562 @@
       overflow-x: hidden;
       overflow-y: hidden;
       margin-top: 20px;
-      gap: 20px;
+      row-gap: 20px;
       display: grid;
       grid-template-rows: repeat(9, 1fr);
       justify-content: center;
       align-items: center;
 
+      //! -------------Jewel1 Responsive--------------//
       & .jewel1-responsive {
-        width: 90%;
+        width: 100%;
         height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 100px;
-          margin-left: 0px;
-          transform: translateX(5px) translateY(15px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text1-responsive {
-          margin: 0 auto;
-          margin-top: 40px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel2-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 90px;
-          margin-left: 0px;
-          transform: translateY(40px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text2-responsive {
-          margin: 0 auto;
-          margin-bottom: 80px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel3-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 100px;
-          margin-left: 0px;
-          transform: translateX(5px) translateY(15px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text3-responsive {
-          margin: 0 auto;
-          margin-top: 30px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel4-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 100px;
-          margin-left: 0px;
-          transform: translateY(40px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text4-responsive {
-          margin: 0 auto;
-          margin-bottom: 100px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel5-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 70px;
-          margin-left: 0px;
-          transform: translateX(5px) translateY(20px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text5-responsive {
-          margin: 0 auto;
-          margin-bottom: 55px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-
-      & .jewel6-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 120px;
-          margin-left: 0px;
-          transform: translateX(0px) translateY(40px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text6-responsive {
-          margin: 0 auto;
-          margin-bottom: 100px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel7-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 150px;
-          margin-left: 0px;
-          transform: translateX(10px) translateY(0px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text7-responsive {
-          margin: 0 auto;
-          margin-bottom: 20px;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .jewel8-responsive {
-        width: 90%;
-        height: 40vh;
-        background: black;
-        border: 1px solid $color-border;
-        display: block;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-
-        & img {
-          width: 150px;
-          margin-left: 0px;
-          transform: translateX(17px) translateY(-25px);
-        }
-        & .imgactive {
-          z-index: 1;
-          width: 80px;
-          height: 90px;
-          background: rgb(0, 0, 0);
-          border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
-        }
-
-        & .text8-responsive {
-          margin: 0 auto;
-
-          & button {
-            width: 80px;
-            height: 30px;
-            font-size: 1rem;
-          }
-
-          & h3 {
-            font-size: 0.6rem;
-            margin: 20px;
-            font-family: $font-title;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: 1px underline;
-            text-underline-offset: 7px;
-            text-decoration-color: $color-border;
-          }
-
-          & a:link {
-            text-decoration: none;
-            color: $color-btn;
-          }
-          & a:visited {
-            text-decoration: none;
-            color: $color-btn;
-          }
-        }
-      }
-      & .logo-jewel-responsive {
-        width: 90%;
-        height: 30vh;
-        margin: 0 auto;
         background: black;
         border: 1px solid $color-border;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 0 auto;
 
         & img {
-          display: flex;
-          width: 180px;
-          margin: 0 auto;
-          transform: translateX(-8px);
+          width: 90px;
+          padding: 5px;
+          transform: translateY(-10px);
         }
-        
         & .imgactive {
           z-index: 1;
-          width: 80px;
-          height: 90px;
+          width: 90px;
+          height: 105px;
           background: rgb(0, 0, 0);
           border: 0.5px solid $color-border;
-          transform: translateY(60px) scale(3);
+          transform: translateY(50px) scale(2.4);
         }
-        & button {
-          width: 100px;
-          height: 40px;
-          font-size: 1.2rem;
-          transform: translateY(-40px);
+
+        & .text1-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
         }
-        & a:link {
-          text-decoration: none;
-          color: $color-btn;
+      }
+      //! -------------Jewel2 Responsive--------------//
+      & .jewel2-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 90px;
+          padding: 5px;
+          transform: translateY(-15px);
         }
-        & a:visited {
-          text-decoration: none;
-          color: $color-btn;
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 93px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2.4);
+        }
+
+        & .text2-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel3 Responsive--------------//
+      & .jewel3-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 90px;
+          padding: 5px;
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 93px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2.4);
+        }
+
+        & .text3-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel4 Responsive--------------//
+      & .jewel4-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 90px;
+          padding: 5px;
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 93px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2.4);
+        }
+
+        & .text4-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel5 Responsive--------------//
+      & .jewel5-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 80px;
+          padding: 5px;
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 130px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2.4);
+        }
+
+        & .text5-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel6 Responsive--------------//
+      & .jewel6-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 110px;
+          padding: 5px;
+          transform: translateY(-20px);
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 110px;
+          height: 93px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2.4);
+        }
+
+        & .text6-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel7 Responsive--------------//
+      & .jewel7-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 90px;
+          padding: 5px;
+          transform: translateY(-20px);
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 93px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2.4);
+        }
+
+        & .text7-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel8 Responsive--------------//
+      & .jewel8-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 70px;
+          padding: 5px;
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 170px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(40px) scale(2);
+        }
+
+        & .text8-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
+        }
+      }
+
+      //! -------------Jewel9 Responsive--------------//
+      & .logo-jewel-responsive {
+        width: 100%;
+        height: 40vh;
+        background: black;
+        border: 1px solid $color-border;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        & img {
+          width: 80px;
+          padding: 5px;
+          transform: translateY(-20px);
+        }
+        & .imgactive {
+          z-index: 1;
+          width: 90px;
+          height: 120px;
+          background: rgb(0, 0, 0);
+          border: 0.5px solid $color-border;
+          transform: translateY(-20px) scale(2.4);
+        }
+
+        & .text9-responsive {
+          margin: 0 !important;
+          margin-top: 30px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          & button {
+            width: 80px;
+            height: 30px;
+            font-size: 1rem;
+          }
+
+          & h3 {
+            font-size: 0.6rem;
+            margin-top: 20px;
+            font-family: $font-title;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: 1px underline;
+            text-underline-offset: 7px;
+            text-decoration-color: $color-border;
+          }
+
+          & a:link {
+            text-decoration: none;
+            color: $color-btn;
+          }
+          & a:visited {
+            text-decoration: none;
+            color: $color-btn;
+          }
         }
       }
     }
