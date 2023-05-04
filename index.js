@@ -1097,3 +1097,42 @@ const loop = () => {
   }, 60);
 };
 loop();
+
+//* text anime ENGLISH //
+const target2 = document.getElementById("target2");
+let array2 = ["Simply\ feminine...", "An\ idea,\ a\ dream,\ a\ path...", "The\ detail\ is\ human...", "A\ creation\ in\ everyday\ life...", "A\ gesture\ that\ comes\ from\ fate..."];
+let wordIndex2 = 0;
+let letterIndex2 = 0;
+
+/* textContent permet injecter du texte dans la balise h3 en l'occurence */
+
+const createLetter2 = () => {
+  const letter2 = document.createElement("span");
+  target2.appendChild(letter2);
+  letter2.textContent = array2[wordIndex2][letterIndex2];
+
+  setTimeout(() => {
+    letter2.remove();
+  }, 2800);
+};
+
+const loop2 = () => {
+  setTimeout(() => {
+    if (wordIndex2 >= array2.length) {
+      wordIndex2 = 0;
+      letterIndex2 = 0;
+      loop2();
+    }else if (letterIndex2 < array2[wordIndex2].length) {
+      createLetter2();
+      letterIndex2++;
+      loop2();
+    } else {
+      wordIndex2++;
+      letterIndex2 = 0;
+      setTimeout(() => {
+        loop2();
+      }, 2800);
+    }
+  }, 60);
+};
+loop2();
