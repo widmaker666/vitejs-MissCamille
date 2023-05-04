@@ -1,5 +1,12 @@
 footer {
-  margin: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid $color-btn;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+
+  
   & .footer-container {
     display: flex;
     flex-direction: column;
@@ -36,6 +43,19 @@ footer {
       & p {
         font-size: 0.8rem;
         letter-spacing: 2px;
+        line-height: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 481px) {
+  footer {
+    & .footer-container {
+
+      & p {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
         line-height: 20px;
       }
     }

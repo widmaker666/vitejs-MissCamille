@@ -7,6 +7,10 @@
   transform: translateY(-150px);
   height: 120vh;
 
+  & .logo-end {
+    transform: translateY(-100px);
+  }
+
   & .end-container {
     & .title {
       display: flex;
@@ -138,91 +142,108 @@
 //* Media screen //
 
 // Petit ecran et pc 769px — 1280px //
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 769px) and (max-width: 1280px) {
   section.end {
-    height: 140vh;
-    margin: 50px auto;
-
-    & .end-container {
-      & .title {
-        width: 700px;
-        & h1 {
-          font-size: 2rem;
-          letter-spacing: 1px;
-        }
+    margin: 0;
+    margin: 80px;
+    & .logo-end {
+      transform: translate(10px);
+      & img {
+        width: 350px;
       }
     }
   }
 }
+
 // tablette 481px — 768px //
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
   section.end {
-    height: 70vh;
-    margin: 50px auto;
+    margin: 0;
+    & .logo-end {
+      & img {
+        width: 300px;
+      }
+    }
+
     & .end-container {
-      transform: translateY(-100px);
       & .title {
-        width: 400px;
+        width: 500px;
+
         & h1 {
-          font-size: 1.6rem;
-          letter-spacing: 1px;
+          font-size: 1.5rem;
+          letter-spacing: 2px;
+          line-height: 40px;
         }
       }
     }
   }
 }
 // Telephone 320px —480px //
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
   section.end {
-    height: 100vh;
-    margin: 0px auto;
-    padding: 0;
-  
-    transform: none;   
+    height: 1150px;
     & .logo-end {
-     transform: translateY(-100px);
       & img {
-        width: 200px;
+        width: 250px;
+        transform: translateY(100px);
       }
     }
 
     & .end-container {
-      
-      margin: 0;
       & .title {
-        width: 250px;
-        height: 100px;
+        width: 280px;
+
         & h1 {
-          font-size: 1.2rem;
-          letter-spacing: 1px;
+          font-size: 1.3rem;
+          letter-spacing: 2px;
+          line-height: 40px;
         }
       }
-
       & button {
+        font-size: 1.8rem;
         width: 200px;
-        height: 60px;
-        font-size: 2rem;
+        height: 80px;
       }
       & button:hover {
-        background: white;
-        cursor: none;
-        text-decoration: none;
+        cursor: pointer;
         width: 200px;
-        height: 60px;
-        font-size: 2rem;
+        height: 80px;
+        font-size: 1.8rem;
+        background: rgb(255, 255, 255);
+        text-decoration: none;
       }
 
       & .social-container {
         & .social {
           & h4 {
-            font-size: 2rem;
+            color: $color-btn;
+            font-size: 1.6rem;
+            font-family: $font-title;
+            font-weight: lighter;
+            text-transform: uppercase;
           }
         }
         & ul {
+          list-style: none;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
           & li i {
-            width: 80px;
-            height: 50px;
+            width: 50px;
+            height: 20px;
             font-size: 2em;
+          }
+          & li a:visited {
+            color: $color-btn;
+          }
+          & li a:link {
+            color: $color-btn;
+          }
+          & li i:hover {
+            animation: none;
           }
         }
       }
