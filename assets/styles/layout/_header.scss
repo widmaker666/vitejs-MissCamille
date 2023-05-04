@@ -86,7 +86,7 @@ header::after {
   animation: before 3s ease-in-out forwards;
 }
 
-//* MEDIA SCREEN //
+//* MEDIA SCREEN in min-width/min-height //
 // Grand Ecran pc - TV (1440px et plus) //
 @media screen and (max-width: 1440px) {
 }
@@ -134,4 +134,43 @@ header::after {
   }
 }
 // tablette 481px — 768px //
+@media screen and (min-width: 481px) and (max-width: 768px){
+  header {
+    height: 45vh;
+    background-size: 100% auto;
+
+    & .title-container {
+      width: 100%;
+      height: 100px;
+      padding: 20px 50px;
+
+      & h1 {
+        font-size: 5em;
+        letter-spacing: 2px;
+        line-height: 140px;
+      }
+
+      & h3 {
+        font-size: 1.1rem;                
+      }
+
+      & h5 {
+        font-size: 1.5rem;
+      }
+    }
+
+    & button {
+      margin: 50px 100px;
+      width: 170px;
+      height: 50px;
+      font-size: 1.6rem;
+    }
+    & button:hover {
+      cursor: none;
+      background: white;
+      text-decoration: none;
+      transform: scale(1);
+    }
+  }
+}
 // Telephone 320px —480px //
