@@ -1022,9 +1022,10 @@ function sendMail() {
     });
 }
 
+//! --------------------------------------------------------------- //
 //* text anime //
 const target = document.getElementById("target");
-let array = ["simplement\ féminin...", "une\ idée,\ un\ rêve,\ un\ chemin...", "le\ détail\ est\ humain...", "une\ création\ au\ quotidien...", "le\ geste\ vient\ du\ destin..."];
+let array = ["Simplement\ féminin...", "Une\ idée,\ un\ rêve,\ un\ chemin...", "Le\ détail\ est\ humain...", "Une\ création\ au\ quotidien...", "Un\ geste\ qui\ vient\ du\ destin..."];
 let wordIndex = 0;
 let letterIndex = 0;
 

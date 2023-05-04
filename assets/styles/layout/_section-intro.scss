@@ -1,8 +1,9 @@
 .container-intro {
   position: relative;
-  height: 180px;
+  height: 200px;
   background: white;
   margin: 35px 30px;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -10,11 +11,13 @@
   border: 2px solid $color-border;
 
   & p {
-    font-family: $font-title;
+    font-family: $font-paragraph;
     color: $color-btn;
+    font-style: italic;
+    font-weight: 800;
     font-size: 1.6rem;
-    letter-spacing: 5px;
-    line-height: 35px;
+    letter-spacing: 3px;
+    line-height: 55px;
   }
 }
 #before::before {
@@ -67,151 +70,104 @@
 }
 
 //* MEDIA SCREEN //
+//
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
+  .container-intro {
+    padding: 0 10px;
 
-@media screen and (max-width: 1200px) {
-  section.container-intro {
-    #before::before {
-      width: 18%;
-      height: 1px;
+    & .text {
+      padding: 20px;
 
-      transform: translateX(10%) scale(0);
-    }
-
-    #before::after {
-      width: 18%;
-      height: 1px;
-
-      transform: translateX(-10%) scale(0);
-    }
-  }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
+      & p {
+        width: 100%;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        line-height: 55px;
+      }
     }
   }
 }
 
-@media screen and (max-width: 950px) {
-  section.container-intro {
-    height: 120px;
+// 1439px - 1201px Ecran Pc //
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+  .container-intro {
+    padding: 0 10px;
 
     & p {
-      font-family: $font-title;
-      color: $color-btn;
       font-size: 1.1rem;
       letter-spacing: 2px;
-      line-height: 25px;
-    }
-
-    #before::before {
-      width: 20%;
-      height: 1px;
-
-      transform: translateX(10%) scale(0);
-    }
-
-    #before::after {
-      width: 20%;
-      height: 1px;
-
-      transform: translateX(-10%) scale(0);
-    }
-  }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
+      line-height: 55px;
     }
   }
 }
-
-@media screen and (max-width: 690px) {
-  section.container-intro {
+// Petit ecran et pc 769px — 1024px //
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container-intro {
     & p {
-      font-size: 0.8rem;
+      font-size: 1rem;
       letter-spacing: 2px;
-      line-height: 25px;
-      font-weight: 900;
-    }
-
-    #before::before {
-      width: 15%;
-      height: 1px;
-
-      transform: translateX(10%) scale(0);
-    }
-
-    #before::after {
-      content: "";
-
-      width: 15%;
-      height: 1px;
-
-      transform: translateX(-10%) scale(0);
+      line-height: 40px;
     }
   }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
+  #before::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 50%;
+    width: 15%;
+    height: 2px;
+    background: $color-border;
+    transform: translateX(10%) scale(0);
+    transform-origin: left;
+    animation: line-left 10s forwards;
   }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
-    }
+
+  #before::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 50%;
+    width: 15%;
+    height: 2px;
+    background: $color-border;
+    transform: translateX(-10%) scale(0);
+    transform-origin: right;
+    animation: line-right 10s forwards;
   }
 }
-@media screen and (max-width: 505px) {
-  section.container-intro {
+// tablette 481px — 768px //
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .container-intro {
+    & p {
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      line-height: 30px;
+      font-weight: 800;
+    }
+  }
+  #before::before {
+    width: 20%;
+  }
+
+  #before::after {
+    width: 20%;
+  }
+}
+// Telephone 320px —480px //
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container-intro {
     & p {
       font-size: 0.8rem;
-      letter-spacing: 1px;
-      line-height: 25px;
-      font-weight: 900;
-    }
-
-    #before::before {
-      width: 15%;
-      height: 1px;
-
-      transform: translateX(10%) scale(0);
-    }
-
-    #before::after {
-      width: 15%;
-      height: 1px;
-
-      transform: translateX(-10%) scale(0);
-    }
-  }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
-    }
-  }
-}
-
-@media screen and (max-width: 420px) {
-  section.container-intro {
-    & p {
-      font-size: 0.7rem;
       letter-spacing: 1px;
       line-height: 20px;
-      font-weight: 200;
+      font-weight: 100;
     }
+  }
+  #before::before {
+    width: 0%;
+  }
+
+  #before::after {
+    width: 0%;
   }
 }

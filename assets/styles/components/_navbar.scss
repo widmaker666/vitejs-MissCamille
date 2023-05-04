@@ -238,7 +238,7 @@ nav {
 // Telephone 320px —480px //
 @media screen and (min-width: 320px) and (max-width: 480px) {
   nav {
-    padding: 0;
+    padding: 0px;
     border: none;
 
     & .logo {
@@ -251,7 +251,7 @@ nav {
 
     & img.menu-hamburger {
       display: block;
-      width: 80px;
+      width: 80px;      
       z-index: 1;
       transition: 0.2s ease;
     }
@@ -259,8 +259,8 @@ nav {
     div.nav-link {
       position: absolute;
       width: 100%;
-      height: 100vh;
-      top: 0;
+      height: 110vh;
+      top: 10px;
       left: 0;
       z-index: 1;
       display: flex;
