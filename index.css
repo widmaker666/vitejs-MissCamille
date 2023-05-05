@@ -15,6 +15,9 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -235,7 +238,7 @@ nav .nav-link li a i:hover {
 }
 @media screen and (min-width: 320px) and (max-width: 480px) {
   nav {
-    padding: 0;
+    padding: 0px;
     border: none;
   }
   nav .logo {
@@ -253,8 +256,8 @@ nav .nav-link li a i:hover {
   nav div.nav-link {
     position: absolute;
     width: 100%;
-    height: 100vh;
-    top: 0;
+    height: 110vh;
+    top: 10px;
     left: 0;
     z-index: 1;
     display: flex;
@@ -288,8 +291,8 @@ main {
 }
 main .popup-container {
   position: absolute;
-  top: 0;
-  height: 200vh;
+  top: 0px;
+  height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.255);
   -webkit-backdrop-filter: blur(8px);
@@ -308,45 +311,61 @@ main .popup-container .popup {
   text-align: center;
   border: 1px solid #edc455;
   background: rgb(0, 0, 0);
-  width: 50vw;
-  height: 80vh;
+  width: 60vw;
+  height: 150vh;
 }
 main .popup-container .popup img {
-  width: 100%;
-}
-main .popup-container .popup .description-popup button {
-  width: 200px;
-  height: 60px;
-  font-size: 1.5rem;
-}
-main .popup-container .popup .description-popup button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-color: #edc455;
-  text-underline-offset: 2px;
-  background: black;
-  transition: 0.5s;
-  transform: scale(1.1);
-}
-main .popup-container .popup .description-popup a:link {
-  text-decoration: none;
-  font-family: alumni-reg, sans-serif;
-  letter-spacing: 2px;
-}
-main .popup-container .popup .description-popup a:visited {
-  color: #b59132;
-  font-weight: 100;
-}
-main .popup-container .popup .image-container {
-  transform: translateY(0px) translateX(20px);
+  width: 600px;
 }
 
 .popup-container.active {
   display: flex;
 }
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main .popup-container {
+    position: absolute;
+    top: 0;
+    height: 300vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.255);
+    -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-family: alumni-reg, sans-serif;
+    color: #b59132;
+  }
+  main .popup-container .popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #edc455;
+    background: rgb(0, 0, 0);
+    width: 80vw;
+    height: 655px;
+  }
+  main .popup-container .popup img {
+    width: 300px;
+  }
+}
 footer {
-  margin: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b59132;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 }
 footer .footer-container {
   display: flex;
@@ -375,6 +394,13 @@ footer .footer-container p a:link {
   footer .footer-container p {
     font-size: 0.8rem;
     letter-spacing: 2px;
+    line-height: 20px;
+  }
+}
+@media screen and (max-width: 481px) {
+  footer .footer-container p {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
     line-height: 20px;
   }
 }
@@ -492,11 +518,81 @@ header::after {
     font-size: 2rem;
   }
 }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  header {
+    height: 35vh;
+    background-size: 100% auto;
+  }
+  header .title-container {
+    width: 100%;
+    height: 100px;
+    padding: 15px 0px 0 20px;
+  }
+  header .title-container h1 {
+    font-size: 4.2em;
+    letter-spacing: 1px;
+    line-height: 100px;
+  }
+  header .title-container h3 {
+    font-size: 1.1rem;
+  }
+  header .title-container h5 {
+    font-size: 1.1rem;
+  }
+  header button {
+    margin: 10px 50px;
+    width: 170px;
+    height: 50px;
+    font-size: 1.6rem;
+  }
+  header button:hover {
+    cursor: none;
+    background: white;
+    text-decoration: none;
+    transform: scale(1);
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  header {
+    height: 25vh;
+    background-size: 100% auto;
+  }
+  header .title-container {
+    width: 100%;
+    line-height: 25px;
+    padding: 20px 0 0 18px;
+  }
+  header .title-container h1 {
+    font-size: 1.6em;
+    letter-spacing: 2px;
+  }
+  header .title-container h3 {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+  header .title-container h5 {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+  header button {
+    margin: 10px 0px 0 20px;
+    width: 80px;
+    height: 25px;
+    font-size: 0.8rem;
+  }
+  header button:hover {
+    cursor: none;
+    background: white;
+    text-decoration: none;
+    transform: scale(1);
+  }
+}
 .container-intro {
   position: relative;
-  height: 180px;
+  height: 200px;
   background: white;
   margin: 35px 30px;
+  padding: 0 10px;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -506,9 +602,11 @@ header::after {
 .container-intro p {
   font-family: alumni-reg, sans-serif;
   color: #b59132;
+  font-style: italic;
+  font-weight: 800;
   font-size: 1.6rem;
-  letter-spacing: 5px;
-  line-height: 35px;
+  letter-spacing: 3px;
+  line-height: 55px;
 }
 
 #before::before {
@@ -559,123 +657,87 @@ header::after {
     transform: translateX(-10%) scale(1);
   }
 }
-@media screen and (max-width: 1200px) {
-  section.container-intro #before::before {
-    width: 18%;
-    height: 1px;
-    transform: translateX(10%) scale(0);
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
+  .container-intro {
+    padding: 0 10px;
   }
-  section.container-intro #before::after {
-    width: 18%;
-    height: 1px;
-    transform: translateX(-10%) scale(0);
+  .container-intro .text {
+    padding: 20px;
   }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
-    }
+  .container-intro .text p {
+    width: 100%;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    line-height: 55px;
   }
 }
-@media screen and (max-width: 950px) {
-  section.container-intro {
-    height: 120px;
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
+  .container-intro {
+    padding: 0 10px;
   }
-  section.container-intro p {
-    font-family: alumni-reg, sans-serif;
-    color: #b59132;
+  .container-intro p {
     font-size: 1.1rem;
     letter-spacing: 2px;
-    line-height: 25px;
-  }
-  section.container-intro #before::before {
-    width: 20%;
-    height: 1px;
-    transform: translateX(10%) scale(0);
-  }
-  section.container-intro #before::after {
-    width: 20%;
-    height: 1px;
-    transform: translateX(-10%) scale(0);
-  }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
-    }
+    line-height: 55px;
   }
 }
-@media screen and (max-width: 690px) {
-  section.container-intro p {
-    font-size: 0.8rem;
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container-intro p {
+    font-size: 1rem;
     letter-spacing: 2px;
-    line-height: 25px;
-    font-weight: 900;
+    line-height: 40px;
   }
-  section.container-intro #before::before {
-    width: 15%;
-    height: 1px;
-    transform: translateX(10%) scale(0);
-  }
-  section.container-intro #before::after {
+  #before::before {
     content: "";
+    position: absolute;
+    left: 0;
+    bottom: 50%;
     width: 15%;
-    height: 1px;
-    transform: translateX(-10%) scale(0);
-  }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
-    }
-  }
-}
-@media screen and (max-width: 505px) {
-  section.container-intro p {
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    line-height: 25px;
-    font-weight: 900;
-  }
-  section.container-intro #before::before {
-    width: 15%;
-    height: 1px;
+    height: 2px;
+    background: #edc455;
     transform: translateX(10%) scale(0);
+    transform-origin: left;
+    animation: line-left 10s forwards;
   }
-  section.container-intro #before::after {
+  #before::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 50%;
     width: 15%;
-    height: 1px;
+    height: 2px;
+    background: #edc455;
     transform: translateX(-10%) scale(0);
-  }
-  @keyframes line-left {
-    100% {
-      transform: translateX(20%) scale(1);
-    }
-  }
-  @keyframes line-right {
-    100% {
-      transform: translateX(-20%) scale(1);
-    }
+    transform-origin: right;
+    animation: line-right 10s forwards;
   }
 }
-@media screen and (max-width: 420px) {
-  section.container-intro p {
-    font-size: 0.7rem;
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .container-intro p {
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    line-height: 30px;
+    font-weight: 800;
+  }
+  #before::before {
+    width: 20%;
+  }
+  #before::after {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .container-intro p {
+    font-size: 0.8rem;
     letter-spacing: 1px;
     line-height: 20px;
-    font-weight: 200;
+    font-weight: 100;
+  }
+  #before::before {
+    width: 0%;
+  }
+  #before::after {
+    width: 0%;
   }
 }
 .about-1 {
@@ -851,125 +913,96 @@ header::after {
     line-height: 20px;
   }
 }
+.jewels::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  width: 50%;
+  height: 1px;
+  transform: translateX(50%) scale(0);
+  background: #edc455;
+  animation: before 3s ease-in-out forwards;
+}
+
 .jewels {
   position: relative;
 }
 .jewels .title-jewel {
   margin: 0 auto;
-  width: 40%;
-  height: 100px;
+  width: 500px;
+  height: 120px;
   background: white;
   border: 2px solid #edc455;
-  /* text-align: center;
-  font-family: $font-title;
-  font-size: 2rem;
-  font-weight: 100;
-  color: $color-btn;
-  text-transform: uppercase;
-  letter-spacing: 8px; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .jewels .title-jewel h1 {
   font-family: mistrully, sans-serif;
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: #b59132;
   text-transform: capitalize;
-  letter-spacing: 5px;
+  letter-spacing: 8px;
+}
+.jewels .grid-container-jewels-responsive {
+  display: none;
 }
 .jewels .grid-container-jewels {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   margin: 40px;
-  gap: 10px;
+  row-gap: 50px;
   align-items: center;
 }
-.jewels .grid-container-jewels .jewel1,
-.jewels .grid-container-jewels .jewel3,
-.jewels .grid-container-jewels .jewel4,
-.jewels .grid-container-jewels .jewel6,
-.jewels .grid-container-jewels .jewel7 {
+.jewels .grid-container-jewels img:hover {
+  cursor: pointer;
+}
+.jewels .grid-container-jewels .jewel1 {
   position: relative;
   border: 1px solid #edc455;
   background: rgba(0, 0, 0, 0.75);
   text-align: center;
-  font-size: 1rem;
   width: 90%;
   height: 500px;
   margin: 0 auto;
 }
-.jewels .grid-container-jewels .jewel1 p,
-.jewels .grid-container-jewels .jewel3 p,
-.jewels .grid-container-jewels .jewel4 p,
-.jewels .grid-container-jewels .jewel6 p,
-.jewels .grid-container-jewels .jewel7 p {
+.jewels .grid-container-jewels .jewel1 #jewel1-img {
+  width: 140px;
+  margin: 10px;
+}
+.jewels .grid-container-jewels .jewel1 .text1::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #edc455;
+  top: 10px;
+  transform: translateX(-50%);
+}
+.jewels .grid-container-jewels .jewel1 p {
   font-family: alumni-reg, sans-serif;
   color: white;
-  font-weight: 0;
-  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
   padding: 0px 10px;
   height: 150px;
   width: 100%;
   display: flex;
   align-items: center;
+  margin: 10px 0 0 0;
 }
-.jewels .grid-container-jewels .jewel1 .text1::before,
-.jewels .grid-container-jewels .jewel1 .text3::before,
-.jewels .grid-container-jewels .jewel1 .text4::before,
-.jewels .grid-container-jewels .jewel1 .text3::before,
-.jewels .grid-container-jewels .jewel1 .text6::before,
-.jewels .grid-container-jewels .jewel1 .text7::before,
-.jewels .grid-container-jewels .jewel3 .text1::before,
-.jewels .grid-container-jewels .jewel3 .text3::before,
-.jewels .grid-container-jewels .jewel3 .text4::before,
-.jewels .grid-container-jewels .jewel3 .text3::before,
-.jewels .grid-container-jewels .jewel3 .text6::before,
-.jewels .grid-container-jewels .jewel3 .text7::before,
-.jewels .grid-container-jewels .jewel4 .text1::before,
-.jewels .grid-container-jewels .jewel4 .text3::before,
-.jewels .grid-container-jewels .jewel4 .text4::before,
-.jewels .grid-container-jewels .jewel4 .text3::before,
-.jewels .grid-container-jewels .jewel4 .text6::before,
-.jewels .grid-container-jewels .jewel4 .text7::before,
-.jewels .grid-container-jewels .jewel6 .text1::before,
-.jewels .grid-container-jewels .jewel6 .text3::before,
-.jewels .grid-container-jewels .jewel6 .text4::before,
-.jewels .grid-container-jewels .jewel6 .text3::before,
-.jewels .grid-container-jewels .jewel6 .text6::before,
-.jewels .grid-container-jewels .jewel6 .text7::before,
-.jewels .grid-container-jewels .jewel7 .text1::before,
-.jewels .grid-container-jewels .jewel7 .text3::before,
-.jewels .grid-container-jewels .jewel7 .text4::before,
-.jewels .grid-container-jewels .jewel7 .text3::before,
-.jewels .grid-container-jewels .jewel7 .text6::before,
-.jewels .grid-container-jewels .jewel7 .text7::before {
-  position: absolute;
-  content: "";
-  width: 200px;
-  height: 2px;
-  background: #edc455;
-  top: 18px;
-  transform: translateX(-50%);
-}
-.jewels .grid-container-jewels .jewel1 button,
-.jewels .grid-container-jewels .jewel3 button,
-.jewels .grid-container-jewels .jewel4 button,
-.jewels .grid-container-jewels .jewel6 button,
-.jewels .grid-container-jewels .jewel7 button {
+.jewels .grid-container-jewels .jewel1 button {
   width: 150px;
-  height: 35px;
+  height: 45px;
   margin: 5px 0;
   font-size: 1.3rem;
   text-align: center;
   transition: 0.5s;
 }
-.jewels .grid-container-jewels .jewel1 button:hover,
-.jewels .grid-container-jewels .jewel3 button:hover,
-.jewels .grid-container-jewels .jewel4 button:hover,
-.jewels .grid-container-jewels .jewel6 button:hover,
-.jewels .grid-container-jewels .jewel7 button:hover {
+.jewels .grid-container-jewels .jewel1 button:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #edc455;
@@ -978,20 +1011,12 @@ header::after {
   transition: 0.5s;
   transform: scale(1.1);
 }
-.jewels .grid-container-jewels .jewel1 h3,
-.jewels .grid-container-jewels .jewel3 h3,
-.jewels .grid-container-jewels .jewel4 h3,
-.jewels .grid-container-jewels .jewel6 h3,
-.jewels .grid-container-jewels .jewel7 h3 {
-  margin: 40px 0;
+.jewels .grid-container-jewels .jewel1 h3 {
+  margin: 20px 0;
   text-transform: uppercase;
   font-size: 1rem;
 }
-.jewels .grid-container-jewels .jewel1 h3:hover,
-.jewels .grid-container-jewels .jewel3 h3:hover,
-.jewels .grid-container-jewels .jewel4 h3:hover,
-.jewels .grid-container-jewels .jewel6 h3:hover,
-.jewels .grid-container-jewels .jewel7 h3:hover {
+.jewels .grid-container-jewels .jewel1 h3:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #edc455;
@@ -999,35 +1024,248 @@ header::after {
   transform: scale(1.1);
   transition: 0.5s;
 }
-.jewels .grid-container-jewels .jewel1 a:link,
-.jewels .grid-container-jewels .jewel3 a:link,
-.jewels .grid-container-jewels .jewel4 a:link,
-.jewels .grid-container-jewels .jewel6 a:link,
-.jewels .grid-container-jewels .jewel7 a:link {
+.jewels .grid-container-jewels .jewel1 a:link {
   text-decoration: none;
   font-family: alumni-reg, sans-serif;
   letter-spacing: 2px;
   color: #b59132;
 }
-.jewels .grid-container-jewels .jewel1 a:visited,
-.jewels .grid-container-jewels .jewel3 a:visited,
-.jewels .grid-container-jewels .jewel4 a:visited,
-.jewels .grid-container-jewels .jewel6 a:visited,
-.jewels .grid-container-jewels .jewel7 a:visited {
+.jewels .grid-container-jewels .jewel1 a:visited {
   color: #b59132;
   font-weight: 100;
 }
-.jewels .grid-container-jewels .jewel1 div,
-.jewels .grid-container-jewels .jewel3 div,
-.jewels .grid-container-jewels .jewel4 div,
-.jewels .grid-container-jewels .jewel6 div,
-.jewels .grid-container-jewels .jewel7 div {
+.jewels .grid-container-jewels .jewel1 div {
   position: absolute;
   bottom: 0;
 }
-.jewels .grid-container-jewels img {
-  width: 200px;
-  height: auto;
+.jewels .grid-container-jewels .jewel2 {
+  position: relative;
+  border: 1px solid #edc455;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+  top: 99px;
+}
+.jewels .grid-container-jewels .jewel2 #jewel2-img {
+  width: 210px;
+  margin: 10px;
+}
+.jewels .grid-container-jewels .jewel2 .text2::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #edc455;
+  top: 230px;
+  transform: translateX(-50%);
+}
+.jewels .grid-container-jewels .jewel2 p {
+  font-family: alumni-reg, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
+  padding: 0px 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.jewels .grid-container-jewels .jewel2 button {
+  width: 150px;
+  height: 45px;
+  margin: 5px 0;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel2 button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 2px;
+  background: black;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.jewels .grid-container-jewels .jewel2 h3 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.jewels .grid-container-jewels .jewel2 h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 8px;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel2 a:link {
+  text-decoration: none;
+  font-family: alumni-reg, sans-serif;
+  letter-spacing: 2px;
+  color: #b59132;
+}
+.jewels .grid-container-jewels .jewel2 a:visited {
+  color: #b59132;
+  font-weight: 100;
+}
+.jewels .grid-container-jewels .jewel3 {
+  position: relative;
+  border: 1px solid #edc455;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+}
+.jewels .grid-container-jewels .jewel3 #jewel3-img {
+  width: 170px;
+  margin: 10px;
+}
+.jewels .grid-container-jewels .jewel3 .text3::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #edc455;
+  top: 230px;
+  transform: translateX(-50%);
+}
+.jewels .grid-container-jewels .jewel3 p {
+  font-family: alumni-reg, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
+  padding: 0px 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.jewels .grid-container-jewels .jewel3 button {
+  width: 150px;
+  height: 45px;
+  margin: 5px 0;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel3 button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 2px;
+  background: black;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.jewels .grid-container-jewels .jewel3 h3 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.jewels .grid-container-jewels .jewel3 h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 8px;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel3 a:link {
+  text-decoration: none;
+  font-family: alumni-reg, sans-serif;
+  letter-spacing: 2px;
+  color: #b59132;
+}
+.jewels .grid-container-jewels .jewel3 a:visited {
+  color: #b59132;
+  font-weight: 100;
+}
+.jewels .grid-container-jewels .jewel4 {
+  position: relative;
+  border: 1px solid #edc455;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+}
+.jewels .grid-container-jewels .jewel4 #jewel4-img {
+  width: 190px;
+  margin: 10px;
+}
+.jewels .grid-container-jewels .jewel4 .text4::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #edc455;
+  top: 240px;
+  transform: translateX(-50%);
+}
+.jewels .grid-container-jewels .jewel4 p {
+  font-family: alumni-reg, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
+  padding: 0px 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.jewels .grid-container-jewels .jewel4 button {
+  width: 150px;
+  height: 45px;
+  margin: 5px 0;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel4 button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 2px;
+  background: black;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.jewels .grid-container-jewels .jewel4 h3 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.jewels .grid-container-jewels .jewel4 h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 8px;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel4 a:link {
+  text-decoration: none;
+  font-family: alumni-reg, sans-serif;
+  letter-spacing: 2px;
+  color: #b59132;
+}
+.jewels .grid-container-jewels .jewel4 a:visited {
+  color: #b59132;
+  font-weight: 100;
 }
 .jewels .grid-container-jewels .jewel5 {
   position: relative;
@@ -1035,11 +1273,16 @@ header::after {
   border: 1px solid #edc455;
   background: rgba(0, 0, 0, 0.75);
   text-align: center;
-  width: 450px;
-  height: 300px;
+  width: 550px;
+  height: 350px;
   margin: 0 auto;
   padding: 10px;
   top: 25px;
+}
+.jewels .grid-container-jewels .jewel5 #jewel5-img {
+  width: 150px;
+  height: auto;
+  margin: 10px;
 }
 .jewels .grid-container-jewels .jewel5 .text5::before {
   position: absolute;
@@ -1048,23 +1291,24 @@ header::after {
   height: 2px;
   background: #edc455;
   top: 50%;
-  left: 70px;
+  left: 50px;
   transform: translateX(-50%);
   transform: rotate(90deg);
 }
 .jewels .grid-container-jewels .jewel5 p {
   font-family: alumni-reg, sans-serif;
   color: white;
-  font-weight: 0;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  height: 150px;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+  font-style: italic;
+  height: 200px;
   display: flex;
   align-items: center;
 }
 .jewels .grid-container-jewels .jewel5 button {
   width: 150px;
-  height: 35px;
+  height: 45px;
   margin: 5px 0;
   font-size: 1.3rem;
   text-align: center;
@@ -1105,17 +1349,175 @@ header::after {
 .jewels .grid-container-jewels .jewel5 img {
   padding: 20px;
 }
+.jewels .grid-container-jewels .jewel6 {
+  position: relative;
+  border: 1px solid #edc455;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+}
+.jewels .grid-container-jewels .jewel6 #jewel6-img {
+  width: 250px;
+  margin: 10px;
+}
+.jewels .grid-container-jewels .jewel6 .text6::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #edc455;
+  top: 230px;
+  transform: translateX(-50%);
+}
+.jewels .grid-container-jewels .jewel6 p {
+  font-family: alumni-reg, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
+  padding: 0px 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.jewels .grid-container-jewels .jewel6 button {
+  width: 150px;
+  height: 45px;
+  margin: 5px 0;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel6 button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 2px;
+  background: black;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.jewels .grid-container-jewels .jewel6 h3 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.jewels .grid-container-jewels .jewel6 h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 8px;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel6 a:link {
+  text-decoration: none;
+  font-family: alumni-reg, sans-serif;
+  letter-spacing: 2px;
+  color: #b59132;
+}
+.jewels .grid-container-jewels .jewel6 a:visited {
+  color: #b59132;
+  font-weight: 100;
+}
+.jewels .grid-container-jewels .jewel7 {
+  position: relative;
+  border: 1px solid #edc455;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 90%;
+  height: 500px;
+  margin: 0 auto;
+}
+.jewels .grid-container-jewels .jewel7 #jewel7-img {
+  width: 200px;
+  transform: translateX(20px);
+  margin: 10px;
+}
+.jewels .grid-container-jewels .jewel7 .text7::before {
+  position: absolute;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #edc455;
+  top: 230px;
+  transform: translateX(-50%);
+}
+.jewels .grid-container-jewels .jewel7 p {
+  font-family: alumni-reg, sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
+  padding: 0px 10px;
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.jewels .grid-container-jewels .jewel7 button {
+  width: 150px;
+  height: 45px;
+  margin: 5px 0;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel7 button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 2px;
+  background: black;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+.jewels .grid-container-jewels .jewel7 h3 {
+  margin: 20px 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.jewels .grid-container-jewels .jewel7 h3:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #edc455;
+  text-underline-offset: 8px;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.jewels .grid-container-jewels .jewel7 a:link {
+  text-decoration: none;
+  font-family: alumni-reg, sans-serif;
+  letter-spacing: 2px;
+  color: #b59132;
+}
+.jewels .grid-container-jewels .jewel7 a:visited {
+  color: #b59132;
+  font-weight: 100;
+}
 .jewels .grid-container-jewels .jewel8 {
   position: relative;
   display: flex;
   border: 1px solid #edc455;
   background: rgba(0, 0, 0, 0.75);
   text-align: center;
-  width: 450px;
-  height: 300px;
+  width: 550px;
+  height: 350px;
   margin: 0 auto;
   padding: 10px;
-  bottom: 68px;
+  top: -50px;
+}
+.jewels .grid-container-jewels .jewel8 #jewel8-img {
+  width: 150px;
+  height: auto;
+  margin: 10px;
 }
 .jewels .grid-container-jewels .jewel8 .text8::before {
   position: absolute;
@@ -1124,23 +1526,24 @@ header::after {
   height: 2px;
   background: #edc455;
   top: 50%;
-  left: 60px;
+  left: 50px;
   transform: translateX(-50%);
   transform: rotate(90deg);
 }
 .jewels .grid-container-jewels .jewel8 p {
   font-family: alumni-reg, sans-serif;
   color: white;
-  font-weight: 0;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-  height: 150px;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 2.7px;
+  font-style: italic;
+  height: 200px;
   display: flex;
   align-items: center;
 }
 .jewels .grid-container-jewels .jewel8 button {
   width: 150px;
-  height: 35px;
+  height: 45px;
   margin: 5px 0;
   font-size: 1.3rem;
   text-align: center;
@@ -1178,46 +1581,54 @@ header::after {
   color: #b59132;
   font-weight: 100;
 }
-.jewels .grid-container-jewels .jewel2 {
+.jewels .grid-container-jewels .jewel8 img {
+  padding: 20px;
+}
+.jewels .grid-container-jewels .logo-jewel {
   position: relative;
   border: 1px solid #edc455;
   background: rgba(0, 0, 0, 0.75);
   text-align: center;
-  font-size: 1rem;
-  width: 80%;
+  width: 90%;
   height: 500px;
   margin: 0 auto;
-  top: 99px;
 }
-.jewels .grid-container-jewels .jewel2 .text2::before {
+.jewels .grid-container-jewels .logo-jewel #jewel9-img {
+  width: 140px;
+  transform: translateX(-10px);
+  margin: 10px;
+}
+.jewels .grid-container-jewels .logo-jewel .text9::before {
   position: absolute;
   content: "";
   width: 250px;
   height: 2px;
   background: #edc455;
-  top: 200px;
+  top: 230px;
   transform: translateX(-50%);
 }
-.jewels .grid-container-jewels .jewel2 p {
+.jewels .grid-container-jewels .logo-jewel p {
   font-family: alumni-reg, sans-serif;
   color: white;
-  font-weight: 0;
-  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 2.7px;
   padding: 0px 10px;
   height: 150px;
   width: 100%;
   display: flex;
   align-items: center;
+  margin: 10px 0 0 0;
 }
-.jewels .grid-container-jewels .jewel2 button {
+.jewels .grid-container-jewels .logo-jewel button {
   width: 150px;
-  height: 35px;
-  margin: 5px 0;
+  height: 45px;
   font-size: 1.3rem;
   text-align: center;
   transition: 0.5s;
 }
-.jewels .grid-container-jewels .jewel2 button:hover {
+.jewels .grid-container-jewels .logo-jewel button:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #edc455;
@@ -1226,12 +1637,12 @@ header::after {
   transition: 0.5s;
   transform: scale(1.1);
 }
-.jewels .grid-container-jewels .jewel2 h3 {
-  margin: 40px 0;
+.jewels .grid-container-jewels .logo-jewel h3 {
+  margin: 20px 0;
   text-transform: uppercase;
   font-size: 1rem;
 }
-.jewels .grid-container-jewels .jewel2 h3:hover {
+.jewels .grid-container-jewels .logo-jewel h3:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #edc455;
@@ -1239,51 +1650,15 @@ header::after {
   transform: scale(1.1);
   transition: 0.5s;
 }
-.jewels .grid-container-jewels .jewel2 a:link {
+.jewels .grid-container-jewels .logo-jewel a:link {
   text-decoration: none;
   font-family: alumni-reg, sans-serif;
   letter-spacing: 2px;
   color: #b59132;
 }
-.jewels .grid-container-jewels .jewel2 a:visited {
+.jewels .grid-container-jewels .logo-jewel a:visited {
   color: #b59132;
   font-weight: 100;
-}
-.jewels .logo-jewel {
-  width: 90%;
-  height: 500px;
-  border: 1px solid #edc455;
-  margin: 0 auto;
-}
-.jewels .logo-jewel img {
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
-}
-.jewels .logo-jewel button {
-  font-size: 1.5rem;
-  width: 180px;
-  height: 60px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.jewels .logo-jewel button a:link {
-  text-decoration: none;
-  color: #b59132;
-}
-.jewels .logo-jewel button a:visited {
-  color: #b59132;
-}
-.jewels .logo-jewel button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-color: #edc455;
-  text-underline-offset: 2px;
-  transition: 0.5s;
-  transform: scale(1.1);
-  background: black;
 }
 .jewels .grid-container-jewels::before {
   content: "";
@@ -1298,1400 +1673,689 @@ header::after {
   animation: before 3s ease-in-out forwards;
 }
 
-.jewel4 img,
-.jewel6 img {
-  margin-top: 30px;
-}
-
-.jewel7 img {
-  margin-top: 20px;
-  margin-left: 40px;
-}
-
-.jewel5 img {
-  margin-bottom: 20px;
-  margin-right: 20px;
-}
-
-.jewel8 img {
-  margin-bottom: 50px;
-}
-
-.jewels::after {
-  content: "";
-  position: absolute;
-  top: -20px;
-  width: 50%;
-  height: 1px;
-  transform: translateX(50%) scale(0);
-  background: #edc455;
-  animation: before 3s ease-in-out forwards;
-}
-
 @keyframes before {
   100% {
     transform: translateX(50%) scale(1);
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) and (max-width: 1440px) {
+  section.jewels .grid-container-jewels-responsive {
+    display: none;
+  }
+  section.jewels .grid-container-jewels img:hover {
+    cursor: pointer;
+  }
+  section.jewels .grid-container-jewels .jewel1 .text1::before {
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel1 p {
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels .jewel2 p {
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels .jewel3 p {
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels .jewel4 .text4::before {
+    top: 230px;
+  }
+  section.jewels .grid-container-jewels .jewel4 p {
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels .jewel5 p {
+    font-size: 0.9rem;
+  }
+  section.jewels .grid-container-jewels .jewel5 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel6 p {
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels .jewel7 p {
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels .jewel8 p {
+    font-size: 0.9rem;
+  }
+  section.jewels .grid-container-jewels .jewel8 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel p {
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1201px) and (max-width: 1439px) {
   section.jewels .grid-container-jewels-responsive {
     display: none;
   }
   section.jewels .grid-container-jewels {
     row-gap: 20px;
-    -moz-column-gap: 0px;
-         column-gap: 0px;
   }
-  section.jewels .grid-container-jewels .jewel1,
-  section.jewels .grid-container-jewels .jewel3,
-  section.jewels .grid-container-jewels .jewel4,
-  section.jewels .grid-container-jewels .jewel6,
-  section.jewels .grid-container-jewels .jewel7 {
-    font-size: 1.2rem;
-    width: 70%;
-  }
-  section.jewels .grid-container-jewels .jewel1 img,
-  section.jewels .grid-container-jewels .jewel3 img,
-  section.jewels .grid-container-jewels .jewel4 img,
-  section.jewels .grid-container-jewels .jewel6 img,
-  section.jewels .grid-container-jewels .jewel7 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel1 img:hover,
-  section.jewels .grid-container-jewels .jewel3 img:hover,
-  section.jewels .grid-container-jewels .jewel4 img:hover,
-  section.jewels .grid-container-jewels .jewel6 img:hover,
-  section.jewels .grid-container-jewels .jewel7 img:hover {
+  section.jewels .grid-container-jewels img:hover {
     cursor: pointer;
   }
-  section.jewels .grid-container-jewels .jewel1 p,
-  section.jewels .grid-container-jewels .jewel3 p,
-  section.jewels .grid-container-jewels .jewel4 p,
-  section.jewels .grid-container-jewels .jewel6 p,
-  section.jewels .grid-container-jewels .jewel7 p {
-    margin-top: 10px;
-  }
-  section.jewels .grid-container-jewels .jewel1 button,
-  section.jewels .grid-container-jewels .jewel3 button,
-  section.jewels .grid-container-jewels .jewel4 button,
-  section.jewels .grid-container-jewels .jewel6 button,
-  section.jewels .grid-container-jewels .jewel7 button {
-    width: 200px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel1 .text1::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text4::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text6::before,
-  section.jewels .grid-container-jewels .jewel1 .text7::before,
-  section.jewels .grid-container-jewels .jewel3 .text1::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text4::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text6::before,
-  section.jewels .grid-container-jewels .jewel3 .text7::before,
-  section.jewels .grid-container-jewels .jewel4 .text1::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text4::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text6::before,
-  section.jewels .grid-container-jewels .jewel4 .text7::before,
-  section.jewels .grid-container-jewels .jewel6 .text1::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text4::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text6::before,
-  section.jewels .grid-container-jewels .jewel6 .text7::before,
-  section.jewels .grid-container-jewels .jewel7 .text1::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text4::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text6::before,
-  section.jewels .grid-container-jewels .jewel7 .text7::before {
-    top: 25px;
-  }
-  section.jewels .grid-container-jewels .jewel2 {
-    width: 80%;
-  }
-  section.jewels .grid-container-jewels .jewel2 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel2 p {
-    font-size: 1.2rem;
-    margin-top: 0;
-  }
-  section.jewels .grid-container-jewels .jewel2 button {
-    width: 200px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 {
-    width: 100%;
-  }
-  section.jewels .grid-container-jewels .jewel5 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel5 p {
-    font-size: 1rem;
-    margin-left: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 button {
-    width: 200px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 {
-    width: 100%;
-  }
-  section.jewels .grid-container-jewels .jewel8 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel8 p {
-    font-size: 1rem;
-    margin-top: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 button {
-    width: 200px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .logo-jewel {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 1439px) {
-  section.jewels .grid-container-jewels-responsive {
-    display: none;
-  }
-  section.jewels .grid-container-jewels {
-    row-gap: 20px;
-    -moz-column-gap: 0px;
-         column-gap: 0px;
-  }
-  section.jewels .grid-container-jewels .jewel1,
-  section.jewels .grid-container-jewels .jewel3,
-  section.jewels .grid-container-jewels .jewel4,
-  section.jewels .grid-container-jewels .jewel6,
-  section.jewels .grid-container-jewels .jewel7 {
-    font-size: 1.2rem;
-    width: 70%;
-  }
-  section.jewels .grid-container-jewels .jewel1 img,
-  section.jewels .grid-container-jewels .jewel3 img,
-  section.jewels .grid-container-jewels .jewel4 img,
-  section.jewels .grid-container-jewels .jewel6 img,
-  section.jewels .grid-container-jewels .jewel7 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel1 img:hover,
-  section.jewels .grid-container-jewels .jewel3 img:hover,
-  section.jewels .grid-container-jewels .jewel4 img:hover,
-  section.jewels .grid-container-jewels .jewel6 img:hover,
-  section.jewels .grid-container-jewels .jewel7 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel1 p,
-  section.jewels .grid-container-jewels .jewel3 p,
-  section.jewels .grid-container-jewels .jewel4 p,
-  section.jewels .grid-container-jewels .jewel6 p,
-  section.jewels .grid-container-jewels .jewel7 p {
-    margin-top: 10px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-  }
-  section.jewels .grid-container-jewels .jewel1 button,
-  section.jewels .grid-container-jewels .jewel3 button,
-  section.jewels .grid-container-jewels .jewel4 button,
-  section.jewels .grid-container-jewels .jewel6 button,
-  section.jewels .grid-container-jewels .jewel7 button {
+  section.jewels .grid-container-jewels .jewel1 .text1::before {
     width: 180px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
+    top: 0;
   }
-  section.jewels .grid-container-jewels .jewel1 h3,
-  section.jewels .grid-container-jewels .jewel3 h3,
-  section.jewels .grid-container-jewels .jewel4 h3,
-  section.jewels .grid-container-jewels .jewel6 h3,
-  section.jewels .grid-container-jewels .jewel7 h3 {
-    font-size: 0.8rem;
-  }
-  section.jewels .grid-container-jewels .jewel1 .text1::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text4::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text6::before,
-  section.jewels .grid-container-jewels .jewel1 .text7::before,
-  section.jewels .grid-container-jewels .jewel3 .text1::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text4::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text6::before,
-  section.jewels .grid-container-jewels .jewel3 .text7::before,
-  section.jewels .grid-container-jewels .jewel4 .text1::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text4::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text6::before,
-  section.jewels .grid-container-jewels .jewel4 .text7::before,
-  section.jewels .grid-container-jewels .jewel6 .text1::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text4::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text6::before,
-  section.jewels .grid-container-jewels .jewel6 .text7::before,
-  section.jewels .grid-container-jewels .jewel7 .text1::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text4::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text6::before,
-  section.jewels .grid-container-jewels .jewel7 .text7::before {
-    top: 25px;
-  }
-  section.jewels .grid-container-jewels .jewel2 {
-    width: 80%;
-  }
-  section.jewels .grid-container-jewels .jewel2 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel2 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel2 p {
-    margin-top: 10px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-  }
-  section.jewels .grid-container-jewels .jewel2 button {
-    width: 180px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel2 h3 {
-    font-size: 0.8rem;
-  }
-  section.jewels .grid-container-jewels .jewel2 p {
-    font-size: 1.2rem;
-    margin-top: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 {
-    width: 100%;
-  }
-  section.jewels .grid-container-jewels .jewel5 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel5 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel5 p {
-    margin-top: 10px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-  }
-  section.jewels .grid-container-jewels .jewel5 button {
-    width: 135px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 h3 {
-    font-size: 0.7rem;
-  }
-  section.jewels .grid-container-jewels .jewel8 {
-    width: 100%;
-  }
-  section.jewels .grid-container-jewels .jewel8 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel8 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel8 p {
-    margin-top: 10px;
-    font-size: 1rem;
-    letter-spacing: 1px;
-  }
-  section.jewels .grid-container-jewels .jewel8 button {
-    width: 150px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 h3 {
-    font-size: 0.7rem;
-  }
-  section.jewels .grid-container-jewels .logo-jewel {
-    width: 70%;
-  }
-}
-@media screen and (max-width: 1200px) {
-  section.jewels .grid-container-jewels-responsive {
-    display: none;
-  }
-  section.jewels .grid-container-jewels {
-    gap: 10px;
-  }
-  section.jewels .grid-container-jewels .jewel1,
-  section.jewels .grid-container-jewels .jewel3,
-  section.jewels .grid-container-jewels .jewel4,
-  section.jewels .grid-container-jewels .jewel6,
-  section.jewels .grid-container-jewels .jewel7 {
-    font-size: 0.8rem;
-    width: 100%;
-  }
-  section.jewels .grid-container-jewels .jewel1 img,
-  section.jewels .grid-container-jewels .jewel3 img,
-  section.jewels .grid-container-jewels .jewel4 img,
-  section.jewels .grid-container-jewels .jewel6 img,
-  section.jewels .grid-container-jewels .jewel7 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel1 img:hover,
-  section.jewels .grid-container-jewels .jewel3 img:hover,
-  section.jewels .grid-container-jewels .jewel4 img:hover,
-  section.jewels .grid-container-jewels .jewel6 img:hover,
-  section.jewels .grid-container-jewels .jewel7 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel1 p,
-  section.jewels .grid-container-jewels .jewel3 p,
-  section.jewels .grid-container-jewels .jewel4 p,
-  section.jewels .grid-container-jewels .jewel6 p,
-  section.jewels .grid-container-jewels .jewel7 p {
-    margin-top: 10px;
-  }
-  section.jewels .grid-container-jewels .jewel1 button,
-  section.jewels .grid-container-jewels .jewel3 button,
-  section.jewels .grid-container-jewels .jewel4 button,
-  section.jewels .grid-container-jewels .jewel6 button,
-  section.jewels .grid-container-jewels .jewel7 button {
-    width: 150px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel1 h3,
-  section.jewels .grid-container-jewels .jewel3 h3,
-  section.jewels .grid-container-jewels .jewel4 h3,
-  section.jewels .grid-container-jewels .jewel6 h3,
-  section.jewels .grid-container-jewels .jewel7 h3 {
-    font-size: 0.8rem;
-  }
-  section.jewels .grid-container-jewels .jewel1 .text1::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text4::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text6::before,
-  section.jewels .grid-container-jewels .jewel1 .text7::before,
-  section.jewels .grid-container-jewels .jewel3 .text1::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text4::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text6::before,
-  section.jewels .grid-container-jewels .jewel3 .text7::before,
-  section.jewels .grid-container-jewels .jewel4 .text1::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text4::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text6::before,
-  section.jewels .grid-container-jewels .jewel4 .text7::before,
-  section.jewels .grid-container-jewels .jewel6 .text1::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text4::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text6::before,
-  section.jewels .grid-container-jewels .jewel6 .text7::before,
-  section.jewels .grid-container-jewels .jewel7 .text1::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text4::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text6::before,
-  section.jewels .grid-container-jewels .jewel7 .text7::before {
-    top: 28px;
-    width: 160px;
-  }
-  section.jewels .grid-container-jewels .jewel2 {
-    width: 70%;
-  }
-  section.jewels .grid-container-jewels .jewel2 img {
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel2 img:hover {
-    cursor: pointer;
+  section.jewels .grid-container-jewels .jewel1 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
   section.jewels .grid-container-jewels .jewel2 .text2::before {
-    width: 200px;
+    width: 300px;
   }
   section.jewels .grid-container-jewels .jewel2 p {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel3 .text3::before {
+    width: 180px;
+  }
+  section.jewels .grid-container-jewels .jewel3 p {
     font-size: 0.9rem;
+    letter-spacing: 2px;
   }
-  section.jewels .grid-container-jewels .jewel2 h3 {
-    font-size: 0.8rem;
+  section.jewels .grid-container-jewels .jewel4 .text4::before {
+    width: 180px;
   }
-  section.jewels .grid-container-jewels .jewel2 button {
-    width: 150px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 {
-    width: 100%;
+  section.jewels .grid-container-jewels .jewel4 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
   section.jewels .grid-container-jewels .jewel5 p {
-    font-size: 1rem;
-    margin-left: 0;
+    font-size: 0.9rem;
   }
   section.jewels .grid-container-jewels .jewel5 button {
-    width: 150px;
-    height: 50px;
     margin: 0;
-    padding: 0;
   }
-  section.jewels .grid-container-jewels .jewel5 h3 {
-    font-size: 0.8rem;
-    width: 200px;
+  section.jewels .grid-container-jewels .jewel6 .text6::before {
+    width: 180px;
   }
-  section.jewels .grid-container-jewels .jewel8 {
-    width: 100%;
+  section.jewels .grid-container-jewels .jewel6 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
-  section.jewels .grid-container-jewels .jewel8 p {
-    font-size: 1rem;
-    margin-top: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 button {
-    width: 150px;
-    height: 50px;
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 h3 {
-    font-size: 0.8rem;
-  }
-  section.jewels .grid-container-jewels .logo-jewel {
-    width: 100%;
-    height: 300px;
-    padding: 0;
-    margin: 0;
-    margin-bottom: 137px;
-  }
-  section.jewels .grid-container-jewels button {
-    width: 150px;
-    height: 50px;
-    font-size: 1.3rem;
-  }
-}
-@media screen and (max-width: 1024px) {
-  section.jewels .title-jewel {
-    width: 300px;
-    height: 100px;
-  }
-  section.jewels .title-jewel h1 {
-    font-family: mistrully, sans-serif;
-    font-size: 2rem;
-    color: #b59132;
-    letter-spacing: 1px;
-  }
-  section.jewels .grid-container-jewels-responsive {
-    display: none;
-  }
-  section.jewels .grid-container-jewels {
-    grid-template-columns: 33% 33% 34%;
-    grid-template-rows: 33% 33% 34%;
-    align-items: center;
-    margin: 20px 0;
-    gap: 0;
-    row-gap: 10px;
-    width: 100%;
-  }
-  section.jewels .grid-container-jewels .jewel1,
-  section.jewels .grid-container-jewels .jewel3,
-  section.jewels .grid-container-jewels .jewel4,
-  section.jewels .grid-container-jewels .jewel6,
-  section.jewels .grid-container-jewels .jewel7 {
-    position: relative;
-    border: 1px solid #edc455;
-    background: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    font-size: 1rem;
-    width: 80%;
-    height: 500px;
-  }
-  section.jewels .grid-container-jewels .jewel1 .text1::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text4::before,
-  section.jewels .grid-container-jewels .jewel1 .text3::before,
-  section.jewels .grid-container-jewels .jewel1 .text6::before,
-  section.jewels .grid-container-jewels .jewel1 .text7::before,
-  section.jewels .grid-container-jewels .jewel3 .text1::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text4::before,
-  section.jewels .grid-container-jewels .jewel3 .text3::before,
-  section.jewels .grid-container-jewels .jewel3 .text6::before,
-  section.jewels .grid-container-jewels .jewel3 .text7::before,
-  section.jewels .grid-container-jewels .jewel4 .text1::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text4::before,
-  section.jewels .grid-container-jewels .jewel4 .text3::before,
-  section.jewels .grid-container-jewels .jewel4 .text6::before,
-  section.jewels .grid-container-jewels .jewel4 .text7::before,
-  section.jewels .grid-container-jewels .jewel6 .text1::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text4::before,
-  section.jewels .grid-container-jewels .jewel6 .text3::before,
-  section.jewels .grid-container-jewels .jewel6 .text6::before,
-  section.jewels .grid-container-jewels .jewel6 .text7::before,
-  section.jewels .grid-container-jewels .jewel7 .text1::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text4::before,
-  section.jewels .grid-container-jewels .jewel7 .text3::before,
-  section.jewels .grid-container-jewels .jewel7 .text6::before,
   section.jewels .grid-container-jewels .jewel7 .text7::before {
-    position: absolute;
-    content: "";
-    width: 0px;
-    height: 2px;
-    background: #edc455;
-    top: 0px;
-    transform: translateX(-50%);
-  }
-  section.jewels .grid-container-jewels .jewel1 img,
-  section.jewels .grid-container-jewels .jewel3 img,
-  section.jewels .grid-container-jewels .jewel4 img,
-  section.jewels .grid-container-jewels .jewel6 img,
-  section.jewels .grid-container-jewels .jewel7 img {
     width: 180px;
-    margin: 0;
-    margin: 20px auto;
-    transition: 0.5s ease-out;
   }
-  section.jewels .grid-container-jewels .jewel1 img:hover,
-  section.jewels .grid-container-jewels .jewel3 img:hover,
-  section.jewels .grid-container-jewels .jewel4 img:hover,
-  section.jewels .grid-container-jewels .jewel6 img:hover,
-  section.jewels .grid-container-jewels .jewel7 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel1 p,
-  section.jewels .grid-container-jewels .jewel3 p,
-  section.jewels .grid-container-jewels .jewel4 p,
-  section.jewels .grid-container-jewels .jewel6 p,
   section.jewels .grid-container-jewels .jewel7 p {
+    margin: 0;
     font-size: 0.9rem;
-  }
-  section.jewels .grid-container-jewels .jewel1 button,
-  section.jewels .grid-container-jewels .jewel3 button,
-  section.jewels .grid-container-jewels .jewel4 button,
-  section.jewels .grid-container-jewels .jewel6 button,
-  section.jewels .grid-container-jewels .jewel7 button {
-    font-size: 1rem;
-    width: 110px;
-    height: 40px;
-  }
-  section.jewels .grid-container-jewels .jewel1 h3,
-  section.jewels .grid-container-jewels .jewel3 h3,
-  section.jewels .grid-container-jewels .jewel4 h3,
-  section.jewels .grid-container-jewels .jewel6 h3,
-  section.jewels .grid-container-jewels .jewel7 h3 {
-    font-size: 0.7rem;
-  }
-  section.jewels .grid-container-jewels .jewel2 {
-    position: relative;
-    border: 1px solid #edc455;
-    background: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    font-size: 1rem;
-    width: 80%;
-    height: 500px;
-    margin: 0 auto;
-    top: 0px;
-  }
-  section.jewels .grid-container-jewels .jewel2 .text2::before {
-    position: absolute;
-    content: "";
-    width: 0px;
-    height: 2px;
-    background: #edc455;
-    top: 5px;
-    transform: translateX(-50%);
-  }
-  section.jewels .grid-container-jewels .jewel2 .text2 {
-    position: absolute;
-    bottom: 0;
-  }
-  section.jewels .grid-container-jewels .jewel2 img {
-    width: 180px;
-    margin-top: 20px;
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel2 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel2 p {
-    font-size: 0.9rem;
-  }
-  section.jewels .grid-container-jewels .jewel2 h3 {
-    font-size: 0.7rem;
-  }
-  section.jewels .grid-container-jewels .jewel2 button {
-    font-size: 1rem;
-    width: 110px;
-    height: 40px;
-  }
-  section.jewels .grid-container-jewels .jewel5 {
-    position: relative;
-    display: block;
-    border: 1px solid #edc455;
-    background: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    font-size: 1rem;
-    width: 80%;
-    height: 500px;
-    top: 0px;
-  }
-  section.jewels .grid-container-jewels .jewel5 .text5 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 img {
-    width: 150px;
-    margin: 0;
-    padding: 0;
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel5 img:hover {
-    cursor: pointer;
-  }
-  section.jewels .grid-container-jewels .jewel5 p {
-    font-size: 0.9rem;
-    padding: 0 10px;
-    margin: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 h3 {
-    margin: 0;
-    margin: 35px auto;
-    width: 180px;
-    font-size: 0.7rem;
-  }
-  section.jewels .grid-container-jewels .jewel5 button {
-    font-size: 1rem;
-    width: 110px;
-    height: 40px;
-  }
-  section.jewels .grid-container-jewels .jewel5 .text5::before {
-    position: absolute;
-    content: "";
-    width: 0px;
-    height: 2px;
-    background: #edc455;
-    top: -20px;
-    transform: rotate(0deg);
-    transform: translateX(0%);
-  }
-  section.jewels .grid-container-jewels .jewel8 {
-    position: relative;
-    display: block;
-    border: 1px solid #edc455;
-    background: rgba(0, 0, 0, 0.75);
-    text-align: center;
-    font-size: 1rem;
-    width: 80%;
-    height: 500px;
-    top: 0px;
-  }
-  section.jewels .grid-container-jewels .jewel8 .text8 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 img {
-    width: 250px;
-    margin: 0;
-    padding: 0;
-    transition: 0.5s ease-out;
-  }
-  section.jewels .grid-container-jewels .jewel8 img:hover {
-    cursor: pointer;
+    letter-spacing: 2px;
   }
   section.jewels .grid-container-jewels .jewel8 p {
     font-size: 0.9rem;
-    padding: 0 10px;
-    margin: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 h3 {
-    margin: 0;
-    margin: 35px auto;
-    width: 180px;
-    font-size: 0.7rem;
   }
   section.jewels .grid-container-jewels .jewel8 button {
-    font-size: 1rem;
-    width: 110px;
-    height: 40px;
-  }
-  section.jewels .grid-container-jewels .jewel8 .text8::before {
-    position: absolute;
-    content: "";
-    width: 0px;
-    height: 2px;
-    background: #edc455;
-    top: -20px;
-    transform: rotate(0deg);
-  }
-  section.jewels .grid-container-jewels .logo-jewel {
-    align-items: center;
-    width: 80%;
-    height: 300px;
     margin: 0;
-    margin: 0 auto;
   }
-  section.jewels .grid-container-jewels button {
-    margin: 0 auto;
+  section.jewels .grid-container-jewels .logo-jewel .text9::before {
+    width: 180px;
+  }
+  section.jewels .grid-container-jewels .logo-jewel p {
+    margin: 0;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
   section.jewels .title-jewel {
-    width: 300px;
-    height: 100px;
-  }
-  section.jewels .title-jewel h1 {
-    font-family: mistrully, sans-serif;
-    font-size: 2rem;
-    color: #b59132;
-    letter-spacing: 1px;
+    width: 400px;
   }
   section.jewels .grid-container-jewels-responsive {
     display: none;
   }
   section.jewels .grid-container-jewels {
-    position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-areas: "jewel1 jewel2" "jewel3 jewel4" "jewel5 jewel6" "jewel7 jewel8" "logo-jewel logo-jewel";
-    margin-top: 20px;
+    grid-template-columns: 33% 33% 34%;
+    grid-template-rows: repeat(3, 1fr);
+    margin: 20px 40px;
+    row-gap: 50px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  section.jewels .grid-container-jewels img:hover {
+    cursor: pointer;
   }
   section.jewels .grid-container-jewels .jewel1 {
-    grid-area: jewel1;
+    width: 100%;
   }
-  section.jewels .grid-container-jewels .jewel1 img {
+  section.jewels .grid-container-jewels .jewel1 .text1::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel1 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel1 button {
     margin: 0;
-    width: 200px;
-    transform: none;
-  }
-  section.jewels .grid-container-jewels .jewel1 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel1 .text1 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel1 .text1 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
   }
   section.jewels .grid-container-jewels .jewel2 {
-    grid-area: jewel2;
+    width: 100%;
+    top: 0;
   }
-  section.jewels .grid-container-jewels .jewel2 img {
-    margin: 0;
-    width: 200px;
-    margin-top: 20px;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel2 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel2 .text2 {
-    margin: 0;
-    padding: 0;
+  section.jewels .grid-container-jewels .jewel2 .text2::before {
+    width: 150px;
   }
   section.jewels .grid-container-jewels .jewel2 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel2 button {
     margin: 0;
-    padding: 0;
-    padding: 10px;
   }
   section.jewels .grid-container-jewels .jewel3 {
-    grid-area: jewel3;
+    width: 100%;
   }
-  section.jewels .grid-container-jewels .jewel3 img {
+  section.jewels .grid-container-jewels .jewel3 .text3::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel3 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel3 button {
     margin: 0;
-    width: 200px;
-    transform: none;
-  }
-  section.jewels .grid-container-jewels .jewel3 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel3 .text3 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel3 .text3 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
   }
   section.jewels .grid-container-jewels .jewel4 {
-    grid-area: jewel4;
+    width: 100%;
   }
-  section.jewels .grid-container-jewels .jewel4 img {
+  section.jewels .grid-container-jewels .jewel4 .text4::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel4 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel4 button {
     margin: 0;
-    width: 200px;
-    margin-top: 50px;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel4 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel4 .text4 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel4 .text4 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
   }
   section.jewels .grid-container-jewels .jewel5 {
-    grid-area: jewel5;
-  }
-  section.jewels .grid-container-jewels .jewel5 img {
-    margin: 0;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel5 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel5 .text5 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel5 .text5 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
-  }
-  section.jewels .grid-container-jewels .jewel6 {
-    grid-area: jewel6;
-  }
-  section.jewels .grid-container-jewels .jewel6 img {
-    margin: 0;
-    width: 250px;
-    margin-top: 50px;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel6 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel6 .text6 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel6 .text6 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
-  }
-  section.jewels .grid-container-jewels .jewel7 {
-    grid-area: jewel7;
-  }
-  section.jewels .grid-container-jewels .jewel7 img {
-    margin: 0;
-    width: 270px;
-    margin-left: 25px;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel7 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel7 .text7 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel7 .text7 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
-  }
-  section.jewels .grid-container-jewels .jewel8 {
-    grid-area: jewel8;
-  }
-  section.jewels .grid-container-jewels .jewel8 img {
-    margin: 0;
-    width: 270px;
-    margin-left: 20px;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel8 img:hover {
-    cursor: auto;
-    transform: none;
-    transition: none;
-  }
-  section.jewels .grid-container-jewels .jewel8 .text8 {
-    margin: 0;
-    padding: 0;
-  }
-  section.jewels .grid-container-jewels .jewel8 .text8 p {
-    margin: 0;
-    padding: 0;
-    padding: 10px;
-  }
-  section.jewels .grid-container-jewels .logo-jewel {
-    position: absolute;
-    grid-area: logo-jewel;
-    width: 90%;
+    width: 100%;
+    height: 500px;
     top: 0;
-    right: 34px;
-    margin-top: 20px;
     display: flex;
-  }
-  section.jewels .grid-container-jewels .logo-jewel img {
-    display: flex;
-    width: 250px;
-  }
-}
-@media screen and (max-width: 624px) {
-  section.jewels .title-jewel {
-    width: 300px;
-    height: 100px;
-  }
-  section.jewels .title-jewel h1 {
-    font-family: mistrully, sans-serif;
-    font-size: 2rem;
-    color: #b59132;
-    letter-spacing: 1px;
-  }
-  section.jewels .grid-container-jewels {
-    display: none;
-  }
-  section.jewels .grid-container-jewels-responsive {
-    position: relative;
-    overflow-x: hidden;
-    margin-top: 20px;
-    gap: 20px;
-    display: grid;
-    grid-template-rows: repeat(9, 1fr);
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     margin: 0 auto;
   }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive img {
-    width: 150px;
-    margin-left: 30px;
-    transform: translateY(-20px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-30px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive img {
-    width: 140px;
-    margin-left: 30px;
-    margin: 0;
-    transform: translateY(30px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(50px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive img {
-    width: 170px;
-    margin-left: 30px;
-    margin: 0;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-30px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive img {
-    width: 200px;
-    margin-left: 30px;
-    margin: 0;
-    transform: translateY(10px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(70px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive img {
+  section.jewels .grid-container-jewels .jewel5 #jewel5-img {
     width: 100px;
-    margin-left: 30px;
-    margin: 0;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(30px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive img {
-    width: 200px;
-    margin-left: 30px;
-    margin: 0;
-    transform: translateY(10px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(70px);
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive img {
-    width: 200px;
-    margin-left: 30px;
-    margin: 0;
-    transform: translateY(-20px);
-    margin-left: 50px;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: auto;
+    margin: 0px;
+    padding: 0;
+    margin-top: 50px;
     transform: translateY(0px);
   }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
+  section.jewels .grid-container-jewels .jewel5 .text5::before {
+    width: 0px;
+    top: 0;
   }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
+  section.jewels .grid-container-jewels .jewel5 p {
+    width: 100%;
+    height: 150px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive {
-    width: 90%;
-    height: 40vh;
-    background: black;
-    border: 1px solid #edc455;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-  }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive img {
-    width: 250px;
-    margin-left: 30px;
+  section.jewels .grid-container-jewels .jewel5 button {
     margin: 0;
-    margin-left: 50px;
-    transform: translateY(-30px);
   }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive {
+  section.jewels .grid-container-jewels .jewel6 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel6 .text6::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel6 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel6 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel7 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel7 .text7::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel7 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel7 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel8 {
+    width: 100%;
+    height: 500px;
+    top: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  section.jewels .grid-container-jewels .jewel8 #jewel8-img {
+    width: 90px;
+    height: auto;
+    margin: 0px;
+    padding: 0;
+    margin-top: 50px;
+    transform: translateY(0px);
+  }
+  section.jewels .grid-container-jewels .jewel8 .text8::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel8 p {
+    width: 100%;
+    height: 150px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel8 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .logo-jewel .text9::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .logo-jewel button {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  section.jewels .title-jewel {
+    width: 400px;
+  }
+  section.jewels .grid-container-jewels-responsive {
+    display: none;
+  }
+  section.jewels .grid-container-jewels {
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    grid-template-rows: repeat(3, 1fr);
+    margin: 20px 40px;
+    row-gap: 50px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
     align-items: center;
     justify-content: center;
-    transform: translateY(-10px);
   }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive button {
-    width: 150px;
-    height: 40px;
-    font-size: 1.2rem;
+  section.jewels .grid-container-jewels img:hover {
+    cursor: pointer;
   }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive h3 {
-    margin: 20px;
-    font-family: alumni-reg, sans-serif;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    -webkit-text-decoration: 1px underline;
-            text-decoration: 1px underline;
-    text-underline-offset: 7px;
-    text-decoration-color: #edc455;
+  section.jewels .grid-container-jewels .jewel1 {
+    width: 100%;
   }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
+  section.jewels .grid-container-jewels .jewel1 .text1::before {
+    width: 0px;
+    top: 0;
   }
-  section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
+  section.jewels .grid-container-jewels .jewel1 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive {
-    width: 90%;
-    height: 40vh;
-    margin: 0 auto;
-    background: black;
-    border: 1px solid #edc455;
+  section.jewels .grid-container-jewels .jewel1 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel2 {
+    width: 100%;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel2 .text2::before {
+    width: 0px;
+  }
+  section.jewels .grid-container-jewels .jewel2 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel2 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel3 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel3 .text3::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel3 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel3 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel4 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel4 .text4::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel4 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel4 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel5 {
+    width: 100%;
+    height: 500px;
+    top: 0;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  section.jewels .grid-container-jewels .jewel5 #jewel5-img {
+    width: 100px;
+    height: auto;
+    margin: 0px;
+    padding: 0;
+    margin-top: 50px;
+    transform: translateY(0px);
+  }
+  section.jewels .grid-container-jewels .jewel5 .text5::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel5 p {
+    width: 100%;
+    height: 150px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel5 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel6 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel6 .text6::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel6 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel6 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel7 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel7 .text7::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel7 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel7 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel8 {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  section.jewels .grid-container-jewels .jewel8 #jewel8-img {
+    width: 90px;
+    height: auto;
+    margin: 0px;
+    padding: 0;
+    margin-top: 50px;
+    transform: translateY(0px);
+  }
+  section.jewels .grid-container-jewels .jewel8 .text8::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel8 p {
+    width: 100%;
+    height: 150px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel8 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .logo-jewel .text9::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .logo-jewel button {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  section.jewels .title-jewel {
+    width: 400px;
+  }
+  section.jewels .grid-container-jewels-responsive {
+    display: none;
+  }
+  section.jewels .grid-container-jewels {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 20px 40px;
+    row-gap: 50px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
     align-items: center;
     justify-content: center;
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive img {
+  section.jewels .grid-container-jewels img:hover {
+    cursor: pointer;
+  }
+  section.jewels .grid-container-jewels .jewel1 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel1 .text1::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel1 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel1 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel2 {
+    width: 100%;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel2 .text2::before {
+    width: 0px;
+  }
+  section.jewels .grid-container-jewels .jewel2 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel2 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel3 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel3 .text3::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel3 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel3 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel4 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel4 .text4::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel4 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel4 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel5 {
+    width: 100%;
+    height: 500px;
+    top: 0;
     display: flex;
-    width: 250px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     margin: 0 auto;
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive button {
-    width: 150px;
-    height: 40px;
+  section.jewels .grid-container-jewels .jewel5 #jewel5-img {
+    width: 100px;
+    height: auto;
+    margin: 0px;
+    padding: 0;
+    margin-top: 50px;
+    transform: translateY(0px);
+  }
+  section.jewels .grid-container-jewels .jewel5 .text5::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel5 p {
+    width: 100%;
+    height: 150px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel5 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel6 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel6 #jewel6-img {
+    width: 220px;
+  }
+  section.jewels .grid-container-jewels .jewel6 .text6::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel6 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel6 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel7 {
+    width: 100%;
+  }
+  section.jewels .grid-container-jewels .jewel7 .text7::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel7 p {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel7 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .jewel8 {
+    width: 100%;
+    height: 500px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
+  section.jewels .grid-container-jewels .jewel8 #jewel8-img {
+    width: 90px;
+    height: auto;
+    margin: 0px;
+    padding: 0;
+    margin-top: 50px;
+    transform: translateY(0px);
+  }
+  section.jewels .grid-container-jewels .jewel8 .text8::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .jewel8 p {
+    width: 100%;
+    height: 150px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  section.jewels .grid-container-jewels .jewel8 button {
+    margin: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel {
+    width: 200%;
+  }
+  section.jewels .grid-container-jewels .logo-jewel #jewel9-img {
+    width: 140px;
+  }
+  section.jewels .grid-container-jewels .logo-jewel .text9::before {
+    width: 0px;
+    top: 0;
+  }
+  section.jewels .grid-container-jewels .logo-jewel p {
     font-size: 1.2rem;
-    transform: translateY(-40px);
+    letter-spacing: 2px;
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive a:link {
-    text-decoration: none;
-    color: #b59132;
-  }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive a:visited {
-    text-decoration: none;
-    color: #b59132;
+  section.jewels .grid-container-jewels .logo-jewel button {
+    margin: 0;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2713,39 +2377,43 @@ header::after {
     overflow-x: hidden;
     overflow-y: hidden;
     margin-top: 20px;
-    gap: 20px;
+    row-gap: 20px;
     display: grid;
     grid-template-rows: repeat(9, 1fr);
     justify-content: center;
     align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel1-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel1-responsive img {
-    width: 100px;
-    margin-left: 0px;
-    transform: translateX(5px) translateY(15px);
+    width: 90px;
+    padding: 5px;
+    transform: translateY(-10px);
   }
   section.jewels .grid-container-jewels-responsive .jewel1-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 105px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(50px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive {
-    margin: 0 auto;
-    margin-top: 40px;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel1-responsive .text1-responsive button {
     width: 80px;
@@ -2772,32 +2440,36 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel2-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel2-responsive img {
     width: 90px;
-    margin-left: 0px;
-    transform: translateY(40px);
+    padding: 5px;
+    transform: translateY(-15px);
   }
   section.jewels .grid-container-jewels-responsive .jewel2-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 93px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive {
-    margin: 0 auto;
-    margin-bottom: 80px;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel2-responsive .text2-responsive button {
     width: 80px;
@@ -2824,32 +2496,35 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel3-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel3-responsive img {
-    width: 100px;
-    margin-left: 0px;
-    transform: translateX(5px) translateY(15px);
+    width: 90px;
+    padding: 5px;
   }
   section.jewels .grid-container-jewels-responsive .jewel3-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 93px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive {
-    margin: 0 auto;
+    margin: 0 !important;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel3-responsive .text3-responsive button {
     width: 80px;
@@ -2876,32 +2551,35 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel4-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel4-responsive img {
-    width: 100px;
-    margin-left: 0px;
-    transform: translateY(40px);
+    width: 90px;
+    padding: 5px;
   }
   section.jewels .grid-container-jewels-responsive .jewel4-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 93px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive {
-    margin: 0 auto;
-    margin-bottom: 100px;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel4-responsive .text4-responsive button {
     width: 80px;
@@ -2928,32 +2606,35 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel5-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel5-responsive img {
-    width: 70px;
-    margin-left: 0px;
-    transform: translateX(5px) translateY(20px);
+    width: 80px;
+    padding: 5px;
   }
   section.jewels .grid-container-jewels-responsive .jewel5-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 130px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive {
-    margin: 0 auto;
-    margin-bottom: 55px;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel5-responsive .text5-responsive button {
     width: 80px;
@@ -2980,32 +2661,36 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel6-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel6-responsive img {
-    width: 120px;
-    margin-left: 0px;
-    transform: translateX(0px) translateY(40px);
+    width: 110px;
+    padding: 5px;
+    transform: translateY(-20px);
   }
   section.jewels .grid-container-jewels-responsive .jewel6-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 110px;
+    height: 93px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive {
-    margin: 0 auto;
-    margin-bottom: 100px;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel6-responsive .text6-responsive button {
     width: 80px;
@@ -3032,32 +2717,36 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel7-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel7-responsive img {
-    width: 150px;
-    margin-left: 0px;
-    transform: translateX(10px) translateY(0px);
+    width: 90px;
+    padding: 5px;
+    transform: translateY(-20px);
   }
   section.jewels .grid-container-jewels-responsive .jewel7-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 93px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2.4);
   }
   section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive {
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel7-responsive .text7-responsive button {
     width: 80px;
@@ -3084,31 +2773,35 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .jewel8-responsive {
-    width: 90%;
+    width: 100%;
     height: 40vh;
     background: black;
     border: 1px solid #edc455;
-    display: block;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .jewel8-responsive img {
-    width: 150px;
-    margin-left: 0px;
-    transform: translateX(17px) translateY(-25px);
+    width: 70px;
+    padding: 5px;
   }
   section.jewels .grid-container-jewels-responsive .jewel8-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 170px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(40px) scale(2);
   }
   section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive {
-    margin: 0 auto;
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section.jewels .grid-container-jewels-responsive .jewel8-responsive .text8-responsive button {
     width: 80px;
@@ -3135,41 +2828,58 @@ header::after {
     color: #b59132;
   }
   section.jewels .grid-container-jewels-responsive .logo-jewel-responsive {
-    width: 90%;
-    height: 30vh;
-    margin: 0 auto;
+    width: 100%;
+    height: 40vh;
     background: black;
     border: 1px solid #edc455;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
   }
   section.jewels .grid-container-jewels-responsive .logo-jewel-responsive img {
-    display: flex;
-    width: 180px;
-    margin: 0 auto;
-    transform: translateX(-8px);
+    width: 80px;
+    padding: 5px;
+    transform: translateY(-20px);
   }
   section.jewels .grid-container-jewels-responsive .logo-jewel-responsive .imgactive {
     z-index: 1;
-    width: 80px;
-    height: 90px;
+    width: 90px;
+    height: 120px;
     background: rgb(0, 0, 0);
     border: 0.5px solid #edc455;
-    transform: translateY(60px) scale(3);
+    transform: translateY(-20px) scale(2.4);
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive button {
-    width: 100px;
-    height: 40px;
-    font-size: 1.2rem;
-    transform: translateY(-40px);
+  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive .text9-responsive {
+    margin: 0 !important;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive a:link {
+  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive .text9-responsive button {
+    width: 80px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive .text9-responsive h3 {
+    font-size: 0.6rem;
+    margin-top: 20px;
+    font-family: alumni-reg, sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-text-decoration: 1px underline;
+            text-decoration: 1px underline;
+    text-underline-offset: 7px;
+    text-decoration-color: #edc455;
+  }
+  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive .text9-responsive a:link {
     text-decoration: none;
     color: #b59132;
   }
-  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive a:visited {
+  section.jewels .grid-container-jewels-responsive .logo-jewel-responsive .text9-responsive a:visited {
     text-decoration: none;
     color: #b59132;
   }
@@ -3583,6 +3293,9 @@ header::after {
   transform: translateY(-150px);
   height: 120vh;
 }
+.end .logo-end {
+  transform: translateY(-100px);
+}
 .end .end-container .title {
   display: flex;
   align-items: center;
@@ -3695,78 +3408,90 @@ header::after {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 769px) and (max-width: 1280px) {
   section.end {
-    height: 140vh;
-    margin: 50px auto;
-  }
-  section.end .end-container .title {
-    width: 700px;
-  }
-  section.end .end-container .title h1 {
-    font-size: 2rem;
-    letter-spacing: 1px;
-  }
-}
-@media screen and (max-width: 768px) {
-  section.end {
-    height: 70vh;
-    margin: 50px auto;
-  }
-  section.end .end-container {
-    transform: translateY(-100px);
-  }
-  section.end .end-container .title {
-    width: 400px;
-  }
-  section.end .end-container .title h1 {
-    font-size: 1.6rem;
-    letter-spacing: 1px;
-  }
-}
-@media screen and (max-width: 480px) {
-  section.end {
-    height: 100vh;
-    margin: 0px auto;
-    padding: 0;
-    transform: none;
+    margin: 0;
+    margin: 80px;
   }
   section.end .logo-end {
-    transform: translateY(-100px);
+    transform: translate(10px);
   }
   section.end .logo-end img {
-    width: 200px;
+    width: 350px;
   }
-  section.end .end-container {
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  section.end {
     margin: 0;
   }
+  section.end .logo-end img {
+    width: 300px;
+  }
   section.end .end-container .title {
-    width: 250px;
-    height: 100px;
+    width: 500px;
   }
   section.end .end-container .title h1 {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    line-height: 40px;
+  }
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  section.end {
+    height: 1150px;
+  }
+  section.end .logo-end img {
+    width: 250px;
+    transform: translateY(100px);
+  }
+  section.end .end-container .title {
+    width: 280px;
+  }
+  section.end .end-container .title h1 {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    line-height: 40px;
   }
   section.end .end-container button {
+    font-size: 1.8rem;
     width: 200px;
-    height: 60px;
-    font-size: 2rem;
+    height: 80px;
   }
   section.end .end-container button:hover {
-    background: white;
-    cursor: none;
-    text-decoration: none;
+    cursor: pointer;
     width: 200px;
-    height: 60px;
-    font-size: 2rem;
+    height: 80px;
+    font-size: 1.8rem;
+    background: rgb(255, 255, 255);
+    text-decoration: none;
   }
   section.end .end-container .social-container .social h4 {
-    font-size: 2rem;
+    color: #b59132;
+    font-size: 1.6rem;
+    font-family: alumni-reg, sans-serif;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  section.end .end-container .social-container ul {
+    list-style: none;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   section.end .end-container .social-container ul li i {
-    width: 80px;
-    height: 50px;
+    width: 50px;
+    height: 20px;
     font-size: 2em;
+  }
+  section.end .end-container .social-container ul li a:visited {
+    color: #b59132;
+  }
+  section.end .end-container .social-container ul li a:link {
+    color: #b59132;
+  }
+  section.end .end-container .social-container ul li i:hover {
+    animation: none;
   }
 }/*# sourceMappingURL=index.css.map */
