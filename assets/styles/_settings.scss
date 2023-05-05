@@ -33,7 +33,7 @@ $color-card: rgba(0, 0, 0, 0.75);
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  scroll-behavior: smooth;
+  user-select: none;
 }
 
 html {
@@ -45,7 +45,4 @@ body {
   background: $color-background;
   overflow-x: hidden;
   overflow-y: hidden;
-  scroll-behavior: smooth;
-
 }
-
