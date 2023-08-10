@@ -1,6 +1,6 @@
 # Miss Camille Bjoux - Vite.js Showcase Website
 
-![Miss Camille Jewelry Screenshot](Logo.webp)
+![Miss Camille Jewelry Screenshot](./assets/imagesWebp/Logo.webp)
 
 Welcome to the Miss Camille Jewelry Showcase Website built with Vite.js! This project serves as a platform to display the exquisite collection of fantasy jewelry crafted by Miss Camille. The collection features jewelry made with natural stones, the art of lithotherapy, macramé techniques, and beautifully enameled sequins.
 
